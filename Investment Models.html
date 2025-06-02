@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Finaxa Investments</title>
+  <link rel="stylesheet" href="./css/style.css" />
+ 
+</head>
+<body>
+ <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #000;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    .header .logo img {
+      height: 60px;
+    }
+    .header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    .header nav ul li a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+      color: #000;
+    }
+    .header nav ul li a.active,
+    .header nav ul li a:hover {
+      color: #b07645;
+    }
+    .header .actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .header .actions a.button {
+      border: 1px solid #b07645;
+      padding: 10px 18px;
+      text-decoration: none;
+      color: #b07645;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    .header .actions a.button:hover {
+      background: #b07645;
+      color: #fff;
+    }
+    .header .actions .search {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* Banner */
+    .banner {
+      background: #000;
+      color: #fff;
+      padding: 60px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .banner h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .banner img {
+      max-height: 180px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 40px;
+      padding: 30px 40px;
+      border-bottom: 1px solid #ccc;
+    }
+    .tabs a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #000;
+      position: relative;
+      padding-bottom: 5px;
+    }
+    .tabs a.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: #b07645;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" />
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="navbar">
+      <li><a href="./index.html" class="active">Home</a></li>
+       <li><a href="./Features.html">Features</a></li>
+      <li>
+        <a href="./Investment Models.html">Investment Products ▾</a>
+        <div class="dropdown">
+          <a href="./Aviation.html">Aviation Investment</a>
+          <a href="./Real Estate.html">Real Estate Investment</a>
+          <a href="./Commodoties.html">Commodities Investment</a>
+        </div>
+      </li>
+      <li><a href="./insights.html">Insights</a></li>
+      <li><a href="./contact.html">Contact Us</a></li>
+    </ul>
+    </nav>
+    <div class="actions">
+       <a href="./contact.html" class="button">Schedule a Meeting</a>
+      <!-- <span class="search">&#128269;</span> -->
+    </div>
+  </header>
+<style>
+   .logo-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-container img {
+  height: 380px; /* You can adjust this */
+  width: auto;
+  display: block;
+}
+
+
+
+nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      position: relative;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 8px 10px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #a4713d;
+    }
+
+    /* Dropdown Styles */
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background:white;
+      padding: 15px 0;
+      min-width: 200px;
+      border-top: 2px solid #a4713d;
+      z-index: 99;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background: #333;
+    }
+
+    .contact-number {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .phone-icon {
+      margin-right: 5px;
+      color: #a4713d;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: #fff;
+        margin-top: 15px;
+        border-top: 1px solid #ccc;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+  </style>
+
+<main>
+  <section class="hero" id="hero">
+    <!-- <h1>Empower Your Business with Our Cutting-Edge Services</h1> -->
+    <!-- <p>Innovative solutions that transform your ideas into reality, with unmatched dedication and expertise.</p> -->
+    <!-- <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Get Started</button> -->
+  </section>
+</main>
+
+
+
+
+ 
+
+ <section id="features" class="features" aria-label="Features Section">
+  <h2>Amazing Features</h2>
+  <div class="features-grid">
+  
+    <article class="feature-card" tabindex="0" aria-label="Feature: Investment in Aviation">
+      <div class="feature-icon" aria-hidden="true">
+        <img src="./img/logo-removebg-preview.png" alt="Blusky Jets Logo" style="width: 200px; margin-bottom: 20px;" />
+      </div>
+      <h3 class="feature-title">Investment in Aviation</h3>
+      <p class="feature-desc">
+        <strong>Investment Amount:</strong> AED 250,000<br>
+        <strong>ROI:</strong> up to 26%<br>
+        <strong>Minimum Investment:</strong> AED 250,000<br>
+        <strong>Period of Investment:</strong> 2 years<br>
+        <strong>Approved:</strong> Yes
+      </p>
+      <div class="feature-buttons">
+        <a href="#enquiry" class="btn-black">ENQUIRY</a>
+        <a href="#learnmore" class="btn-black">LEARN MORE</a>
+      </div>
+    </article>
+    
+    <article class="feature-card" tabindex="0" aria-label="Feature: Secure and Safe">
+      <div class="feature-icon" aria-hidden="true">
+        <img src="./img/WhatsApp_Image_2025-05-21_at_16.27.09_36f24227-removebg-preview.png" alt="Secure & Safe Icon"  style="width: 200px; margin-bottom: 20px;"/>
+      </div>
+      <h3 class="feature-title">Investment in Real Estate</h3>
+      <p class="feature-desc">
+        <strong>Investment Amount:</strong> AED 2,000,000<br>
+        <strong>ROI:</strong> up to 20%<br>
+        <strong>Minimum Investment:</strong> AED 2,000,000<br>
+        <strong>Period of Investment:</strong> 5 years<br>
+        <strong>Approved:</strong> Yes
+      </p>
+      <div class="feature-buttons">
+        <a href="#enquiry" class="btn-black">ENQUIRY</a>
+        <a href="#learnmore" class="btn-black">LEARN MORE</a>
+      </div>
+    </article>
+    
+    <article class="feature-card" tabindex="0" aria-label="Feature: 24/7 Support">
+      <div class="feature-icon" aria-hidden="true">
+        <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="24/7 Support Icon" style="width: 200px; margin-bottom: 20px;" />
+      </div>
+     <h3 class="feature-title">Investment in Commodities</h3>
+      <p class="feature-desc">
+        <strong>Investment Amount:</strong> AED 100,000<br>
+        <strong>ROI:</strong> up to 32%<br>
+        <strong>Minimum Investment:</strong> AED 100,000<br>
+        <strong>Period of Investment:</strong> 1 years<br>
+        <strong>Approved:</strong> Yes
+      </p>
+      <div class="feature-buttons">
+        <a href="#enquiry" class="btn-black">ENQUIRY</a>
+        <a href="#learnmore" class="btn-black">LEARN MORE</a>
+      </div>
+    </article>
+    
+    <!-- <article class="feature-card" tabindex="0" aria-label="Feature: Customizable Plans">
+      <div class="feature-icon" aria-hidden="true">
+        <img src="images/customizable.png" alt="Customizable Plans Icon" />
+      </div>
+      <h3 class="feature-title">Customizable Plans</h3>
+      <p class="feature-desc">Flexible options tailored to fit your business needs perfectly.</p>
+    </article> -->
+
+  </div>
+</section>
+
+<style>
+    .features {
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.feature-desc {
+  font-size: 1rem;
+  color: #666;
+}
+
+.features {
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.feature-icon img {
+  max-width: 100%;
+  height: auto;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+  color: #333;
+}
+
+.feature-desc {
+  font-size: 1rem;
+  color: #555;
+  text-align: left;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 280px;
+}
+
+.feature-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn-black {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 22px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-black:hover {
+  background-color: #444;
+}
+
+</style>
+
+ 
+
+
+
+
+  <section id="contact" class="contact" aria-label="Contact Section">
+    <h2>Contact Us</h2>
+    <form class="contact-form" aria-label="Contact form">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" placeholder="Your full name" required minlength="2" />
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="your.email@example.com" required />
+      <label style="color: white;">I'm Looking To Invest</label><br>
+    <select name="I'm Looking To Invest" required><option value="" disabled selected>Select an option</option>
+      <option value="200,000 AED">200,000 AED</option>
+
+      <option value="400,000 AED">400,000 AED</option>
+      <option value="600,000 AED">600,000 AED</option>
+      <option value="800,000 AED">800,000 AED</option>
+ <option value="1,000,000 AED">1,000,000 AED</option>
+ <option value="1,000,000+AED">1,000,000+ AED</option>
+    </select><br>
+
+    <label style="color: white;">Where did you hear about us?</label><br>
+     <select name="referral-source" required>
+          <option value="" disabled selected>Select an option</option>
+      
+<option value="google">Google Search</option>
+      <option value="social-media">Social Media</option>
+      
+      
+
+<option value="Friends & relatives">Friends & Relatives</option>
+
+<option value="Friends & relatives">Friends & Relatives</option>
+
+
+
+      <option value="other">Other</option>
+    </select><br>
+
+   
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="How can we help you?" required minlength="10"></textarea>
+      <button type="submit" aria-label="Submit Contact Form">Send Message</button>
+    </form>
+  </section>
+  <style>
+    .contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Optional: Style textarea a bit taller */
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Optional: Style the button */
+.contact-form button {
+  background: linear-gradient(to right, #ffdd57, #ffd000);
+  color: #004;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(to right, #ffd000, #ffdd57);
+}
+
+  </style>
+</main>
+
+<footer>
+  &copy; 2024 ServicePro. All rights reserved.
+</footer>
+
+<script>
+  // Smooth scroll active nav link update
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+  window.addEventListener('scroll', () => {
+    let currentSection = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (pageYOffset >= sectionTop) currentSection = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href').substring(1) === currentSection){
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Simple contact form handler preventing reload and showing thanks message
+  document.querySelector('.contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thank you for contacting us! We will get back to you shortly.');
+    this.reset();
+  });
+</script>
+
+
+
+
+</body>
+</html>

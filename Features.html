@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Finaxa Investments</title>
+  <link rel="stylesheet" href="./css/style.css" />
+ 
+</head>
+<body>
+ <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #000;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    .header .logo img {
+      height: 60px;
+    }
+    .header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    .header nav ul li a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+      color: #000;
+    }
+    .header nav ul li a.active,
+    .header nav ul li a:hover {
+      color: #b07645;
+    }
+    .header .actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .header .actions a.button {
+      border: 1px solid #b07645;
+      padding: 10px 18px;
+      text-decoration: none;
+      color: #b07645;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    .header .actions a.button:hover {
+      background: #b07645;
+      color: #fff;
+    }
+    .header .actions .search {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* Banner */
+    .banner {
+      background: #000;
+      color: #fff;
+      padding: 60px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .banner h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .banner img {
+      max-height: 180px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 40px;
+      padding: 30px 40px;
+      border-bottom: 1px solid #ccc;
+    }
+    .tabs a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #000;
+      position: relative;
+      padding-bottom: 5px;
+    }
+    .tabs a.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: #b07645;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" />
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="navbar">
+      <li><a href="./index.html" class="active">Home</a></li>
+       <li><a href="./Features.html">Features</a></li>
+      <li>
+        <a href="./Investment Models.html">Investment Products ▾</a>
+        <div class="dropdown">
+          <a href="./Aviation.html">Aviation Investment</a>
+          <a href="./Real Estate.html">Real Estate Investment</a>
+          <a href="./Commodoties.html">Commodities Investment</a>
+        </div>
+      </li>
+      <li><a href="./insights.html">Insights</a></li>
+      <li><a href="./contact.html">Contact Us</a></li>
+    </ul>
+    </nav>
+    <div class="actions">
+       <a href="./contact.html" class="button">Schedule a Meeting</a>
+      <!-- <span class="search">&#128269;</span> -->
+    </div>
+  </header>
+
+<style>
+    .hero {
+      height: 100vh;
+      background-image: url('./img/wmremove-transformed\ \(6\).jpeg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      max-width: 700px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .cta-btn {
+      background-color: #ffdd59;
+      color: #0052cc;
+      font-weight: 700;
+      padding: 14px 35px;
+      border-radius: 50px;
+      box-shadow: 0 8px 16px rgba(255, 221, 89, 0.5);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #ffd500;
+      box-shadow: 0 12px 24px rgba(255, 213, 0, 0.8);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-number {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
+    }
+
+   .logo-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-container img {
+  height: 380px; /* You can adjust this */
+  width: auto;
+  display: block;
+}
+
+
+
+nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      position: relative;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 8px 10px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #a4713d;
+    }
+
+    /* Dropdown Styles */
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background:white;
+      padding: 15px 0;
+      min-width: 200px;
+      border-top: 2px solid #a4713d;
+      z-index: 99;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background: #333;
+    }
+
+    .contact-number {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .phone-icon {
+      margin-right: 5px;
+      color: #a4713d;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: #fff;
+        margin-top: 15px;
+        border-top: 1px solid #ccc;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+  </style>
+
+<main>
+  <section class="hero" id="hero">
+    <!-- <h1>Empower Your Business with Our Cutting-Edge Services</h1> -->
+    <!-- <p>Innovative solutions that transform your ideas into reality, with unmatched dedication and expertise.</p> -->
+    <!-- <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Get Started</button> -->
+  </section>
+</main>
+
+
+  <style>
+    /* body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #000;
+    } */
+
+    /* header {
+      background-color: #0b1c3e;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    } */
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-box {
+      background-color: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #0b1c3e;
+    }
+
+    .feature-box p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .why-choose {
+      background-color: #ffffff;
+      padding: 50px 20px;
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .why-choose h2 {
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .why-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .why-item {
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .why-item h4 {
+      font-size: 18px;
+      color: #0b1c3e;
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      background-color: #0b1c3e;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta h3 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .cta button {
+      background-color: #f4b400;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #000;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta button:hover {
+      background-color: #e2a600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Features - Finaxa Investment</h1>
+  </header>
+
+  <section class="section">
+    <h2>What We Offer</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <h3>Real Estate Investments</h3>
+        <p>Premium residential and commercial properties in high-growth locations offering long-term returns and asset security.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Aviation Investments</h3>
+        <p>Exclusive access to private aviation opportunities that combine luxury, performance, and solid ROI.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Facility Management</h3>
+        <p>Operational excellence in property and asset maintenance ensuring sustainable and reliable performance.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Commodities</h3>
+        <p>Strategically structured investments that prioritise risk-adjusted returns while safeguarding capital.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Tailored for Elite Investors</h3>
+        <p>Bespoke investment portfolios built for high-net-worth individuals seeking exclusivity and performance.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Global Reach</h3>
+        <p>Opportunities across international markets with transparent reporting and access to global exchanges.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose">
+    <h2>Why Choose Finaxa?</h2>
+    <div class="why-list">
+      <div class="why-item">
+        <h4>Proven track record of successful, high-value ventures</h4>
+        <p>Nearly a decade of experience delivering secure and profitable investments.</p>
+      </div>
+      <div class="why-item">
+        <h4>Multidisciplinary team with cross-sectoral expertise</h4>
+        <p>Backed by research and analytics, every opportunity is data-driven.</p>
+      </div>
+      <div class="why-item">
+        <h4>Access to off-market, high-barrier investment opportunities
+
+</h4>
+        <p>We focus on delivering consistent returns and building generational wealth.</p>
+      </div>
+       <div class="why-item">
+        <h4>Strong governance and risk management framework
+
+</h4>
+        <p>We focus on delivering consistent returns and building generational wealth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="cta">
+    <h3>Ready to Invest in Your Future?</h3>
+    <button>Contact Us Now</button>
+  </section> -->
+
+
+
+  <section id="contact" class="contact" aria-label="Contact Section">
+    <h2>Contact Us</h2>
+    <form class="contact-form" aria-label="Contact form">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" placeholder="Your full name" required minlength="2" />
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="your.email@example.com" required />
+      <label style="color: white;">I'm Looking To Invest</label><br>
+    <select name="I'm Looking To Invest" required><option value="" disabled selected>Select an option</option>
+      <option value="200,000 AED">200,000 AED</option>
+
+      <option value="400,000 AED">400,000 AED</option>
+      <option value="600,000 AED">600,000 AED</option>
+      <option value="800,000 AED">800,000 AED</option>
+ <option value="1,000,000 AED">1,000,000 AED</option>
+ <option value="1,000,000+AED">1,000,000+ AED</option>
+    </select><br>
+
+    <label style="color: white;">Where did you hear about us?</label><br>
+     <select name="referral-source" required>
+          <option value="" disabled selected>Select an option</option>
+      
+<option value="google">Google Search</option>
+      <option value="social-media">Social Media</option>
+      
+      
+
+<option value="Friends & relatives">Friends & Relatives</option>
+
+<option value="Friends & relatives">Friends & Relatives</option>
+
+
+
+      <option value="other">Other</option>
+    </select><br>
+
+   
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="How can we help you?" required minlength="10"></textarea>
+      <button type="submit" aria-label="Submit Contact Form">Send Message</button>
+    </form>
+  </section>
+  <style>
+    .contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Optional: Style textarea a bit taller */
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Optional: Style the button */
+.contact-form button {
+  background: linear-gradient(to right, #ffdd57, #ffd000);
+  color: #004;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(to right, #ffd000, #ffdd57);
+}
+
+  </style>
+</main>
+
+<footer>
+  &copy; 2024 ServicePro. All rights reserved.
+</footer>
+
+<script>
+  // Smooth scroll active nav link update
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+  window.addEventListener('scroll', () => {
+    let currentSection = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (pageYOffset >= sectionTop) currentSection = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href').substring(1) === currentSection){
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Simple contact form handler preventing reload and showing thanks message
+  document.querySelector('.contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thank you for contacting us! We will get back to you shortly.');
+    this.reset();
+  });
+</script>
+
+
+
+
+</body>
+</html>

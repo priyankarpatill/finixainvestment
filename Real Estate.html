@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promoted Products | AIX Investment Group</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #000;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    .header .logo img {
+      height: 60px;
+    }
+    .header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    .header nav ul li a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+      color: #000;
+    }
+    .header nav ul li a.active,
+    .header nav ul li a:hover {
+      color: #b07645;
+    }
+    .header .actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .header .actions a.button {
+      border: 1px solid #b07645;
+      padding: 10px 18px;
+      text-decoration: none;
+      color: #b07645;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    .header .actions a.button:hover {
+      background: #b07645;
+      color: #fff;
+    }
+    .header .actions .search {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* Banner */
+    .banner {
+      background: #000;
+      color: #fff;
+      padding: 60px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .banner h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .banner img {
+      max-height: 180px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 40px;
+      padding: 30px 40px;
+      border-bottom: 1px solid #ccc;
+    }
+    .tabs a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #000;
+      position: relative;
+      padding-bottom: 5px;
+    }
+    .tabs a.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: #b07645;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" />
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+     <ul id="navbar">
+      <li><a href="./index.html" class="active">Home</a></li>
+       <li><a href="./Features.html">Features</a></li>
+      <li>
+        <a href="./Investment Models.html">Investment Products ▾</a>
+        <div class="dropdown">
+          <a href="./Aviation.html">Aviation Investment</a>
+          <a href="./Real Estate.html">Real Estate Investment</a>
+          <a href="./Commodoties.html">Commodities Investment</a>
+        </div>
+      </li>
+      <li><a href="./insights.html">Insights</a></li>
+      <li><a href="./contact.html">Contact Us</a></li>
+    </ul>
+    </nav>
+    <div class="actions">
+       <a href="./contact.html" class="button">Schedule a Meeting</a>
+      <!-- <span class="search">&#128269;</span> -->
+    </div>
+  </header>
+  <style>
+    
+
+nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      position: relative;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 8px 10px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #a4713d;
+    }
+
+    /* Dropdown Styles */
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      padding: 15px 0;
+      min-width: 200px;
+      border-top: 2px solid #a4713d;
+      z-index: 99;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background: #333;
+    }
+
+    .contact-number {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .phone-icon {
+      margin-right: 5px;
+      color: #a4713d;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: #fff;
+        margin-top: 15px;
+        border-top: 1px solid #ccc;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+  </style>
+
+  <!-- Banner -->
+  <section class="banner">
+    <h1>PROMOTED PRODUCTS</h1>
+    <!-- <img src="./img/" alt="Chart Graphic" /> -->
+  </section>
+  <style>
+
+     .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 80px;
+      gap: 40px;
+    }
+
+    .text-content {
+      flex: 1;
+      position: relative;
+    }
+
+    .quote-icon {
+      font-size: 160px;
+      color: #e5cbb4;
+      position: absolute;
+      top: -60px;
+      left: -10px;
+      z-index: -1;
+      line-height: 0.8;
+    }
+
+    .heading {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      background-color: #b46b3e;
+      color: #fff;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .image-container {
+      flex: 1;
+      position: relative;
+    }
+
+    .image-container::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 100%;
+      height: 100%;
+      background-color: #f9ede7;
+      z-index: 0;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+
+      .image-container::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <div class="text-content">
+      <div class="quote-icon">“</div>
+      <div class="heading">Real Estate Investment</div>
+      <div class="description">
+      Real estate is more than just buildings and land,
+It's where dreams begin and futures expand.
+From cozy homes to spaces that inspire,
+We help you find the place you truly desire.
+
+
+      </div>
+      <!-- <a href="#" class="button">TO KNOW MORE &gt;&gt;</a> -->
+    </div>
+
+    <div class="image-container">
+      <img src="./img/istockphoto-2154752387-612x612.jpg" alt="Business Meeting">
+      <!-- Replace the above placeholder with your own image URL or local path -->
+    </div>
+  </div>
+<style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+   h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 60px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .feature-box {
+      text-align: left;
+      padding: 10px;
+    }
+
+    .feature-box img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+    }
+
+    .feature-box h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+    }
+
+    .feature-box p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Finixa provides fixed returns with 100% Pay Back at maturity</h1>
+
+    <div class="features">
+      <div class="feature-box">
+        <img src="./img/fixed-income-icon-budget-260nw-2213776295.jpg" alt="Minimal Risk" style="height: 150px; width: 170px;">
+        <h3>Stable Income Investment </h3>
+        <p>Clients benefit by preserving their invested capital, enabled by the 100% payback of the bond.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="./img/4347642-200.png" alt="Low Market Volatility" style="height: 150px; width: 150px;">
+        <h3> Portfolio Diversification</h3>
+        <p>Bonds carry low volatility as compared to equity or mutual fund and other comparable investments.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="./img/passive-income-earnings-line-icon-260nw-2003586317.jpg" alt="Portfolio Diversification" style="height: 150px; width: 150px;">
+        <h3>Study Income</h3>
+        <p>Bonds enable efficient portfolio diversification and thus assist in portfolio risk-mitigation.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="./img/global-reach-icon-can-be-260nw-2463934699.jpg" alt="Regular Income Stream" style="height: 120px; width: 120px;">
+        <h3>Global Reach</h3>
+        <p>Fixed-income coupon bonds provide investors with a steady stream of income, allowing them to enjoy streamlined cashflow.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="./img/istockphoto-1396661215-612x612.jpg" alt="Transparent" style="height: 120px; width: 150px;">
+        <h3>Low Market Volatility</h3>
+        <p>As a publicly listed bond, Net Asset Value is available at the Vienna Stock Exchange and Bloomberg Terminal.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="./img/investment-risk-icon-simple-element-from-investment-collection-creative-investment-risk-icon-for-web-design-templates-infographics-and-more-2CBA2FY.jpg" alt="Global Advantage" style="height: 120px; width: 160px;">
+        <h3>Low Risk Investment</h3>
+        <p>Being a listed financial security with its own ISIN number allows access to the bond subscription globally.</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .footer {
+      background-color: #0e0f16;
+      color: white;
+      padding: 60px 20px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      flex: 1 1 250px;
+    }
+
+    .footer-logo img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .footer-address {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-address b {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex: 2 1 600px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .footer-column {
+      flex: 1 1 150px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column li {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .footer-column li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-column li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-disclaimer {
+      max-width: 1200px;
+      margin: 40px auto 20px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #ccc;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo & Address -->
+      <div class="footer-logo">
+        <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" style="width: 250px; height: 150px;">
+        <!-- <div class="footer-address">
+          <b>United Arab Emirates</b>
+          Downtown, Dubai<br>
+          Burj Khalifa<br>
+          146<sup>th</sup> Floor<br><br>
+          <b>Phone</b><br>
+          +971 4 546 0000
+        </div> -->
+      </div>
+
+      <!-- Navigation Columns -->
+      <div class="footer-columns">
+        <div class="footer-column">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Investment products</a></li>
+            <li><a href="#">Insights</a></li>
+            <!-- <li><a href="#">Careers</a></li> -->
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <!-- <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Disclaimer</a></li> -->
+          </ul>
+        </div>
+        <div class="footer-column">
+          <!-- <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Who We Are</a></li>
+            <li><a href="#">What We Do</a></li>
+            <li><a href="#">Our Approach</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <!-- <div class="footer-disclaimer">
+      <p>
+        AIX Financial Consultation LLC is a financial advisory company incorporated in the United Arab Emirates,
+        duly licensed by Dubai Economy and Tourism (DET) with license number 869463 and regulated by Securities
+        and Commodities Authority - UAE (SCA), to promote financial products, introduce financial services and
+        provide financial advisory for potential investors.
+      </p>
+      <p>
+        AIX Financial Consultation LLC allows only professional investors to invest, once they have considered
+        their investment objectives and risk tolerance and have sought independent advice from professionals and
+        experts if necessary.
+      </p>
+    </div> -->
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      Copyright © 2025 Finixa Investment , All Rights Reserved. Finixa Investment Group is a registered trademark.
+    </div>
+  </footer>
+</body>
+</html>
