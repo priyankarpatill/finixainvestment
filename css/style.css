@@ -150,6 +150,46 @@
       }
     }
 
+    .hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('../img/pexels-jeshoots-com-147458-442579.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: white;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  opacity: 0.8;
+}
+
+.scroll-indicator img {
+  width: 30px; /* adjust size as needed */
+  height: auto;
+}
+
+/* Simple bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+
 
 
     .about-section {
@@ -525,7 +565,7 @@
 
   /* Footer */
   footer {
-    background: #002a80;
+    background: #d4af37 ;
     color: white;
     padding: 20px 15px;
     text-align: center;

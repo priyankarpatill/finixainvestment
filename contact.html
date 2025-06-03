@@ -114,7 +114,7 @@
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group"  style="width: 200px; height: 100px;"/>
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group"  style="width: 250px; height: 120px;"/>
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
@@ -134,7 +134,8 @@
     </ul>
     </nav>
     <div class="actions">
-       <a href="./contact.html" class="button">Schedule a Meeting</a>
+      <a href="#" class="button" onclick="openPopupCallNow(); return false;">Schedule a Meeting</a>
+
       <!-- <span class="search">&#128269;</span> -->
     </div>
   </header>
@@ -358,18 +359,18 @@ nav {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    * {
+    /* * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-    }
+    } */
 
-    body {
+    /* body {
       background-color: #f5f8fa;
       color: #333;
       line-height: 1.6;
-    }
+    } */
 
     .container {
       max-width: 1200px;
@@ -400,7 +401,7 @@ nav {
     }
 
     .contact-info {
-      background-color: #d3d3d3;
+      background-color: #333333;
       color: white;
     }
 
@@ -541,7 +542,7 @@ nav {
 
           <label for="investment">I'm Looking To Invest</label>
           <select name="investment" id="investment" required>
-            <option value="" disabled selected>Select an option</option>
+            <option value="" disabled selected>I'm LookingTo Invest</option>
             <option value="200,000 AED">200,000 AED</option>
             <option value="400,000 AED">400,000 AED</option>
             <option value="600,000 AED">600,000 AED</option>
@@ -650,6 +651,8 @@ nav {
       color: #888;
       margin-top: 20px;
     }
+
+    
   </style>
 </head>
 <body>
@@ -659,7 +662,7 @@ nav {
     <div class="footer-container">
       <!-- Logo & Address -->
       <div class="footer-logo">
-        <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group">
+        <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group"  style="width: 200px; height: 100px;">
         <!-- <div class="footer-address">
           <b>United Arab Emirates</b>
           Downtown, Dubai<br>
@@ -689,14 +692,14 @@ nav {
             <li><a href="#">Disclaimer</a></li> -->
           </ul>
         </div>
-        <div class="footer-column">
+        <!-- <div class="footer-column">
           <ul>
             <li><a href="#">Overview</a></li>
             <li><a href="#">Who We Are</a></li>
             <li><a href="#">What We Do</a></li>
             <li><a href="#">Our Approach</a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -717,7 +720,13 @@ nav {
 
     <!-- Bottom -->
     <div class="footer-bottom">
-      Copyright © 2025 Finaxa Investment , All Rights Reserved. Finaxa Investment Group is a registered trademark.
+      <p>
+  &copy; 2025 Finaxa Investment, All Rights Reserved.
+
+  <span class="designer">
+    Designed by <a href="https://shaswathagroups.com" target="_blank" style="color: gray;">Shaswatha Groups</a>
+  </span>
+</p>
     </div>
   </footer>
 </body>

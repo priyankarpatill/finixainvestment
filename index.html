@@ -114,7 +114,7 @@
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" style="width: 200px; height: 100px;"/>
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" style="width: 250px; height: 120px;"/>
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
@@ -276,10 +276,11 @@ nav {
 
 <main>
   <section class="hero" id="hero">
-    <!-- <h1>Empower Your Business with Our Cutting-Edge Services</h1> -->
-    <!-- <p>Innovative solutions that transform your ideas into reality, with unmatched dedication and expertise.</p> -->
-    <!-- <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Get Started</button> -->
-  </section>
+  
+  
+</section>
+
+ 
 </main>
 
 
@@ -345,37 +346,61 @@ nav {
       font-size: 14px;
       color: #444;
     }
+    .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.features-row-centered {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 360px;
+  flex: 1 1 280px;
+}
+
 </style>
  <section class="section">
-    <h2 style="color: black;">What We Offer</h2>
-    <div class="features-grid">
-      <div class="feature-box">
-        <h3>Real Estate Investments</h3>
-        <p>Premium residential and commercial properties in high-growth locations offering long-term returns and asset security.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Aviation Investments</h3>
-        <p>Exclusive access to private aviation opportunities that combine luxury, performance, and solid ROI.</p>
-      </div>
-      <!-- <div class="feature-box">
-        <h3>Facility Management</h3>
-        <p>Operational excellence in property and asset maintenance ensuring sustainable and reliable performance.</p>
-      </div> -->
-      <div class="feature-box">
-        <h3>Commodities</h3>
-        <p>Strategically structured investments that prioritise risk-adjusted returns while safeguarding capital.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Tailored for Elite Investors</h3>
-        <p>Bespoke investment portfolios built for high-net-worth individuals seeking exclusivity and performance.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Global Reach</h3>
-        <p>Opportunities across international markets with transparent reporting and access to global exchanges.</p>
-      </div>
-    </div>
-  </section>
+  <h2 style="color: black;">What We Offer</h2>
 
+  <div class="features-grid">
+    <div class="feature-box">
+      <h3>Real Estate Investments</h3>
+      <p>Premium residential and commercial properties in high-growth locations offering long-term returns and asset security.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Aviation Investments</h3>
+      <p>Exclusive access to private aviation opportunities that combine luxury, performance, and solid ROI.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Commodities</h3>
+      <p>Strategically structured investments that prioritise risk-adjusted returns while safeguarding capital.</p>
+    </div>
+  </div>
+
+  <!-- Centered second row -->
+  <div class="features-row-centered">
+    <div class="feature-box">
+      <h3>Tailored for Elite Investors</h3>
+      <p>Bespoke investment portfolios built for high-net-worth individuals seeking exclusivity and performance.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Global Reach</h3>
+      <p>Opportunities across international markets with transparent reporting and access to global exchanges.</p>
+    </div>
+  </div>
+</section>
 
 <style>
   .offers-section {
@@ -477,11 +502,11 @@ nav {
   </script>
 
 
-<section class="why-choose">
+<section class="why-choose" style="background-color: #333333;">
   <div class="container">
     <div class="quote-heading">“</div>
-    <h2>Why Choose Finaxa?</h2>
-    <p class="subtitle">Built on trust, driven by innovation, and committed to delivering long-term value.</p>
+    <h2 style="color: white;">Why Choose Finaxa?</h2>
+    <p class="subtitle" style="color: white;">Built on trust, driven by innovation, and committed to delivering long-term value.</p>
 
     <div class="why-list">
       <div class="why-item">
@@ -805,7 +830,8 @@ nav {
 
 /* Optional: Style the button */
 .contact-form button {
-  background: linear-gradient(to right, #ffdd57, #ffd000);
+  /* background: linear-gradient(to right, #ffdd57, #ffd000); */
+  background: #d4af37 ;
   color: #004;
   font-weight: bold;
   border: none;
@@ -813,15 +839,21 @@ nav {
   transition: 0.3s;
 }
 
-.contact-form button:hover {
+/* .contact-form button:hover {
   background: linear-gradient(to right, #ffd000, #ffdd57);
-}
+} */
 
   </style>
 </main>
 
 <footer>
-  &copy; 2024 ServicePro. All rights reserved.
+ <p>
+  &copy; 2025 Finaxa Investment, All Rights Reserved.
+
+  <span class="designer">
+    Designed by <a href="https://shaswathagroups.com" target="_blank">Shaswatha Groups</a>
+  </span>
+</p>
 </footer>
 
 <script>
@@ -854,23 +886,45 @@ nav {
 
 
 
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Call Now Popup Form</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
+      padding: 0;
     }
 
-    /* Side button */
+    /* Top Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1f1f1f;
+      color: white;
+      padding: 15px 30px;
+      z-index: 1000; /* menu layer */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar button {
+      background-color: #c98d53;
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* CALL NOW side button */
     .call-now-btn {
       position: fixed;
       right: 0;
@@ -882,7 +936,7 @@ nav {
       transform: rotate(180deg);
       cursor: pointer;
       font-weight: bold;
-      z-index: 1000;
+      z-index: 1500;
     }
 
     /* Overlay */
@@ -894,7 +948,7 @@ nav {
       background-color: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
-      z-index: 999;
+      z-index: 2000; /* above navbar */
     }
 
     /* Popup Form */
@@ -960,63 +1014,87 @@ nav {
     .popup-form .close-btn:hover {
       color: white;
     }
+
+    /* Main content placeholder */
+    .content {
+      padding: 100px 30px;
+      background-color: #f5f5f5;
+      min-height: 100vh;
+    }
   </style>
-</head>
-<body>
 
-<!-- CALL NOW button -->
-<div class="call-now-btn" onclick="openPopup()">CALL NOW</div>
 
-<!-- Popup Overlay -->
-<div class="popup-overlay" id="popup">
-  <div class="popup-form">
-    <span class="close-btn" onclick="closePopup()">&times;</span>
-    <h2>Get a call back from an Advisor</h2>
-    <form id="callbackForm">
-      <input type="text" placeholder="Name*" required>
-      <input type="email" placeholder="Email*" required>
-      <input type="tel" placeholder="+91 Phone Number*" required>
-      
-      <select required>
-        <option value="">I'm Looking To Invest</option>
-        <option value="real_estate">Real Estate</option>
-        <option value="stocks">Stocks</option>
-        <option value="crypto">Cryptocurrency</option>
-      </select>
+  <!-- Top Nav -->
+  <!-- <div class="navbar">
+    <div>
+      <strong>FINAXA INVESTMENTS</strong>
+      <a href="#">WHAT WE ARE</a>
+      <a href="#">INVESTMENT PRODUCTS</a>
+      <a href="#">INSIGHTS</a>
+      <a href="#">CONTACT US</a>
+    </div>
+    <button>Schedule a Meeting</button>
+  </div> -->
 
-      <select required>
-        <option value="">Where did you hear about us?</option>
-        <option value="google">Google</option>
-        <option value="linkedin">LinkedIn</option>
-        <option value="friend">Friend</option>
-      </select>
+  <!-- CALL NOW side button -->
+  <div class="call-now-btn" onclick="openPopup()">CALL NOW</div>
 
-      <textarea rows="4" placeholder="Message*" required></textarea>
+  <!-- Popup Overlay -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-form">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Request of call back</h2>
+      <form id="callbackForm">
+        <input type="text" placeholder="Name*" required>
+        <input type="email" placeholder="Email*" required>
+        <input type="tel" placeholder="+91 Phone Number*" required>
 
-      <label><input type="checkbox" required> I understand that this inquiry is not for project funding.</label>
-      <label><input type="checkbox" required> I understand that this inquiry is not for job opportunities.</label>
-      <label><input type="checkbox" required> I confirm that I'm a Professional client, Exempt Investor, Accredited Investor...</label>
+        <select required>
+          <option value="">I'm Looking To Invest</option>
+          <option value="real_estate">Real Estate</option>
+          <option value="aviation">Aviation</option>
+          <option value="commodities">Commodities</option>
+        </select>
 
-      <button type="submit">SUBMIT</button>
-    </form>
+        <select required>
+          <option value="">Where did you hear about us?</option>
+          <option value="google">Google</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="friend">Friend</option>
+        </select>
+
+        <textarea rows="4" placeholder="Message*" required></textarea>
+
+        <label><input type="checkbox" required> I understand that this inquiry is not for project funding.</label>
+        <label><input type="checkbox" required> I understand that this inquiry is not for job opportunities.</label>
+        <label><input type="checkbox" required> I confirm that I'm a Professional client, Exempt Investor, Accredited Investor...</label>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
   </div>
-</div>
 
-<script>
-  function openPopup() {
-    document.getElementById("popup").style.display = "flex";
-  }
+  <!-- Placeholder content -->
+  <!-- <div class="content">
+    <h1>Insights</h1>
+    <p>This is the insights page content below the navbar.</p>
+  </div> -->
 
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
+  <script>
+    function openPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
 
-  document.getElementById("callbackForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("Form submitted successfully!");
-    closePopup();
-  });
-</script>
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    document.getElementById("callbackForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Form submitted successfully!");
+      closePopup();
+    });
+  </script>
 
 </body>
 </html>

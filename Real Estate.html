@@ -110,7 +110,7 @@
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group"  style="width: 200px; height: 100px;"/>
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group"  style="width: 250px; height: 120px;"/>
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
@@ -130,7 +130,8 @@
     </ul>
     </nav>
     <div class="actions">
-       <a href="./contact.html" class="button">Schedule a Meeting</a>
+      <a href="#" class="button" onclick="openPopupCallNow(); return false;">Schedule a Meeting</a>
+
       <!-- <span class="search">&#128269;</span> -->
     </div>
   </header>
@@ -255,17 +256,28 @@ nav {
   </section>
   <style>
 
-     .section {
+ 
+    .section {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 60px 80px;
       gap: 40px;
+      background-color: #fff;
+      flex-wrap: wrap;
     }
 
     .text-content {
       flex: 1;
       position: relative;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 180px;
     }
 
     .quote-icon {
@@ -278,28 +290,11 @@ nav {
       line-height: 0.8;
     }
 
-    .heading {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
     .description {
       font-size: 18px;
       line-height: 1.8;
       color: #333;
       margin-bottom: 30px;
-    }
-
-    .button {
-      background-color: #b46b3e;
-      color: #fff;
-      padding: 12px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-      border: none;
-      cursor: pointer;
     }
 
     .image-container {
@@ -337,11 +332,14 @@ nav {
       }
     }
   </style>
-</head>
-<body>
+
+
 
   <div class="section">
     <div class="text-content">
+        <div class="logo-container">
+        <img src="./img/WhatsApp_Image_2025-05-21_at_16.27.09_36f24227-removebg-preview.png" alt="Finaxa Investments Logo" style="height: 150px; width: 250px;">
+      </div>
       <div class="quote-icon">“</div>
       <!-- <div class="heading">Real Estate Investment</div> -->
       <div class="description">
@@ -361,104 +359,114 @@ We help you find the place you truly desire.
     </div>
   </div>
 <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #000;
-    }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #000;
+  }
 
-    .container {
-      max-width: 1200px;
-      margin: 80px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-   h1 {
-      font-size: 32px;
-      font-weight: 600;
-      margin-bottom: 60px;
-    }
+  .container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-    }
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 60px;
+  }
 
-    .feature-box {
-      text-align: left;
-      padding: 10px;
-    }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+  }
 
-    .feature-box img {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 20px;
-    }
+  .feature-box {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+  }
 
-    .feature-box h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin: 0 0 10px 0;
-    }
+  .feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
 
-    .feature-box p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #555;
-    }
-  </style>
-</head>
+  .feature-box img {
+    max-width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+
+  .feature-box h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+
+  .feature-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+  }
+</style>
+
 <body>
-
   <div class="container">
-    <h1>Finaxa provides fixed Collateral protection </h1>
+    <h1>Finaxa provides fixed Collateral protection</h1>
 
     <div class="features">
-          <div class="feature-box">
-        <img src="./img/investment-risk-icon-simple-element-from-investment-collection-creative-investment-risk-icon-for-web-design-templates-infographics-and-more-2CBA2FY.jpg" alt="Global Advantage" style="height: 120px; width: 160px;">
-        <h3>Low Risk Investment</h3>
-        <p>Being a listed financial security with its own ISIN number allows access to the bond subscription globally.</p>
-      </div>
-      
+
+     
+
       <div class="feature-box">
-        <img src="./img/global-reach-icon-can-be-260nw-2463934699.jpg" alt="Regular Income Stream" style="height: 120px; width: 120px;">
+        <img src="./img/global-reach-icon-can-be-260nw-2463934699.jpg" alt="Global Reach">
         <h3>Global Reach</h3>
         <p>Fixed-income coupon bonds provide investors with a steady stream of income, allowing them to enjoy streamlined cashflow.</p>
       </div>
 
+       <div class="feature-box">
+        <img src="./img/investment-risk-icon-icon-related-to-investments-and-financial-concepts-line-icon-style-simple-design-editable-vector.jpg" alt="Low Risk Investment">
+        <h3>Low Risk Investment</h3>
+        <p>Being a listed financial security with its own ISIN number allows access to the bond subscription globally.</p>
+      </div>
+
       <div class="feature-box">
-        <img src="./img/istockphoto-1396661215-612x612.jpg" alt="Transparent" style="height: 120px; width: 150px;">
+        <img src="./img/istockphoto-1396661215-612x612.jpg" alt="Low Market Volatility">
         <h3>Low Market Volatility</h3>
         <p>As a publicly listed bond, Net Asset Value is available at the Vienna Stock Exchange and Bloomberg Terminal.</p>
       </div>
 
-    
-        
       <div class="feature-box">
-        <img src="./img/fixed-income-icon-budget-260nw-2213776295.jpg" alt="Minimal Risk" style="height: 150px; width: 190px;">
-        <h3>Stable Income Investment </h3>
+        <img src="./img/fixed-income-icon-budget-260nw-2213776295.jpg" alt="Stable Income Investment">
+        <h3>Stable Income Investment</h3>
         <p>Clients benefit by preserving their invested capital, enabled by the 100% payback of the bond.</p>
       </div>
 
       <div class="feature-box">
-        <img src="./img/4347642-200.png" alt="Low Market Volatility" style="height: 150px; width: 150px;">
-        <h3> Portfolio Diversification</h3>
+        <img src="./img/4347642-200.png" alt="Portfolio Diversification">
+        <h3>Portfolio Diversification</h3>
         <p>Bonds carry low volatility as compared to equity or mutual fund and other comparable investments.</p>
       </div>
 
       <div class="feature-box">
-        <img src="./img/passive-income-earnings-line-icon-260nw-2003586317.jpg" alt="Portfolio Diversification" style="height: 150px; width: 150px;">
+        <img src="./img/passive-income-earnings-line-icon-260nw-2003586317.jpg" alt="Steady Income">
         <h3>Study Income</h3>
         <p>Bonds enable efficient portfolio diversification and thus assist in portfolio risk-mitigation.</p>
       </div>
 
-
-      
     </div>
   </div>
+</body>
 
   <style>
     .footer {
@@ -607,7 +615,13 @@ We help you find the place you truly desire.
 
     <!-- Bottom -->
     <div class="footer-bottom">
-      Copyright © 2025 Finaxa Investment , All Rights Reserved. Finaxa Investment Group is a registered trademark.
+     <p>
+  &copy; 2025 Finaxa Investment, All Rights Reserved.
+
+  <span class="designer">
+    Designed by <a href="https://shaswathagroups.com" target="_blank" style="color: gray;">Shaswatha Groups</a>
+  </span>
+</p>
     </div>
   </footer>
 </body>
@@ -726,7 +740,7 @@ We help you find the place you truly desire.
 <div class="popup-overlay" id="popup">
   <div class="popup-form">
     <span class="close-btn" onclick="closePopup()">&times;</span>
-    <h2>Get a call back from an Advisor</h2>
+          <h2>Request of call back</h2>
     <form id="callbackForm">
       <input type="text" placeholder="Name*" required>
       <input type="email" placeholder="Email*" required>
