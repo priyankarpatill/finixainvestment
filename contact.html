@@ -349,6 +349,14 @@ nav {
 </main>
 
 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
   <style>
     * {
       box-sizing: border-box;
@@ -358,68 +366,80 @@ nav {
     }
 
     body {
-      background-color: #f5f5f5;
+      background-color: #f5f8fa;
       color: #333;
       line-height: 1.6;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-size: 2.8rem;
       color: #222;
     }
 
     .contact-wrapper {
       display: flex;
       flex-wrap: wrap;
-      background: #fff;
-      border-radius: 10px;
+      background: #ffffff;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
     .contact-info, .contact-form {
       flex: 1;
-      padding: 30px;
+      padding: 40px;
       min-width: 300px;
     }
 
+    .contact-info {
+      background-color: #d3d3d3;
+      color: white;
+    }
+
     .contact-info h2 {
-      margin-bottom: 15px;
-      color: #444;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
     }
 
     .contact-info p {
-      margin: 10px 0;
-      color: #555;
+      margin: 12px 0;
+      font-size: 1rem;
     }
 
-    .contact-info .social-icons {
-      margin-top: 20px;
+    .contact-info strong {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .social-icons {
+      margin-top: 25px;
     }
 
     .social-icons a {
       display: inline-block;
-      margin-right: 10px;
-      color: #555;
-      font-size: 20px;
-      text-decoration: none;
-      transition: color 0.3s;
+      margin-right: 12px;
+      color: white;
+      font-size: 22px;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .social-icons a:hover {
-      color: #007BFF;
+      color: #ffc107;
+      transform: scale(1.1);
     }
 
     .contact-form h2 {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
       color: #444;
     }
 
@@ -428,23 +448,38 @@ nav {
       flex-direction: column;
     }
 
-    .contact-form input, .contact-form textarea {
-      padding: 12px;
-      margin-bottom: 15px;
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      padding: 14px;
+      margin-bottom: 20px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      border-color: #007BFF;
+    }
+
+    .contact-form label {
+      margin-bottom: 8px;
+      font-weight: 500;
     }
 
     .contact-form button {
-      padding: 12px;
+      padding: 14px;
       background-color: #007BFF;
       color: white;
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      border-radius: 8px;
       font-size: 16px;
-      transition: background 0.3s;
+      cursor: pointer;
+      transition: background 0.3s ease;
     }
 
     .contact-form button:hover {
@@ -455,6 +490,11 @@ nav {
       .contact-wrapper {
         flex-direction: column;
       }
+
+      .contact-form,
+      .contact-info {
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
@@ -462,77 +502,72 @@ nav {
   <div class="container">
     <h1>Contact Us</h1>
     <div class="contact-wrapper">
-      
+
+      <!-- Contact Info -->
       <div class="contact-info">
         <h2>Get in Touch</h2>
-        <p><strong>Address:</strong>Emaar Square Building 1, <br>
-
-Level 5 - 505 <br>
-
-Emaar Square, Downtown, <br>
-
-Dubai, UAE</p>
+        <p><strong>Address:</strong>
+          Emaar Square Building 1, <br>
+          Level 5 - 505<br>
+          Emaar Square, Downtown,<br>
+          Dubai, UAE
+        </p>
         <p><strong>Email:</strong> info@finaxainvestments.com</p>
-        <p><strong>Phone:</strong>+971-52 115 4446</p>
-<div class="social-icons">
-  <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://www.twitter.com/yourhandle" target="_blank" title="Twitter">
-    <i class="fab fa-twitter"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
-  <a href="https://www.instagram.com/yourhandle" target="_blank" title="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-</div>
+        <p><strong>Phone:</strong> +971-52 115 4446</p>
 
+        <div class="social-icons">
+          <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.twitter.com/yourhandle" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.instagram.com/yourhandle" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
       </div>
 
-    <div class="contact-form" style="max-width: 600px; margin: 0 auto; padding: 20px;">
-  <h2>Send a Message</h2>
-  <form action="#" method="post">
-    <!-- Basic Fields -->
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <input type="text" name="number" placeholder="Phon rnumber" required />
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Send a Message</h2>
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="number" placeholder="Phone Number" required />
 
-    <!-- Investment Options -->
-    <label for="investment">I'm Looking To Invest</label>
-    <select name="investment" id="investment" required>
-      <option value="" disabled selected>Select an option</option>
-      <option value="200,000 AED">200,000 AED</option>
-      <option value="400,000 AED">400,000 AED</option>
-      <option value="600,000 AED">600,000 AED</option>
-      <option value="800,000 AED">800,000 AED</option>
-      <option value="1,000,000 AED">1,000,000 AED</option>
-      <option value="1,000,000+ AED">1,000,000+ AED</option>
-    </select>
+          <label for="investment">I'm Looking To Invest</label>
+          <select name="investment" id="investment" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="200,000 AED">200,000 AED</option>
+            <option value="400,000 AED">400,000 AED</option>
+            <option value="600,000 AED">600,000 AED</option>
+            <option value="800,000 AED">800,000 AED</option>
+            <option value="1,000,000 AED">1,000,000 AED</option>
+            <option value="1,000,000+ AED">1,000,000+ AED</option>
+          </select>
 
-    <!-- Referral Source -->
-    <label for="referral">Where did you hear about us?</label>
-    <select name="referral" id="referral" required>
-      <option value="" disabled selected>Select an option</option>
-      <option value="google">Google Search</option>
-      <option value="social-media">Social Media</option>
-      <option value="friends">Friends & Relatives</option>
-      <option value="other">Other</option>
-    </select>
+          <label for="referral">Where did you hear about us?</label>
+          <select name="referral" id="referral" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="google">Google Search</option>
+            <option value="social-media">Social Media</option>
+            <option value="friends">Friends & Relatives</option>
+            <option value="other">Other</option>
+          </select>
 
-    <!-- Message -->
-     
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
-    <!-- Submit Button -->
-    <button type="submit">Send Message</button>
-  </form>
-</div>
-
-
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
   </div>
+</body>
+</html>
 
 
   <style>
@@ -682,7 +717,7 @@ Dubai, UAE</p>
 
     <!-- Bottom -->
     <div class="footer-bottom">
-      Copyright © 2025 Finixa Investment , All Rights Reserved. Finixa Investment Group is a registered trademark.
+      Copyright © 2025 Finaxa Investment , All Rights Reserved. Finaxa Investment Group is a registered trademark.
     </div>
   </footer>
 </body>
