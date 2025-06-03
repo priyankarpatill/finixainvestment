@@ -38,7 +38,7 @@
       text-transform: uppercase;
       font-weight: 600;
       font-size: 14px;
-      color: #000;
+      color: white;
     }
     .header nav ul li a.active,
     .header nav ul li a:hover {
@@ -114,13 +114,13 @@
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" />
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group"   style="width: 200px; height: 100px;"/>
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
       <ul id="navbar">
       <li><a href="./index.html" class="active">Home</a></li>
-       <li><a href="./Features.html">Features</a></li>
+       <!-- <li><a href="./Features.html">Features</a></li> -->
       <li>
         <a href="./Investment Models.html">Investment Products ▾</a>
         <div class="dropdown">
@@ -196,7 +196,7 @@ nav {
       position: absolute;
       top: 100%;
       left: 0;
-      background:white;
+      background:#333333;
       padding: 15px 0;
       min-width: 200px;
       border-top: 2px solid #a4713d;
@@ -285,7 +285,7 @@ nav {
   
     <article class="feature-card" tabindex="0" aria-label="Feature: Investment in Aviation">
       <div class="feature-icon" aria-hidden="true">
-        <img src="./img/logo-removebg-preview.png" alt="Blusky Jets Logo" style="width: 200px; margin-bottom: 20px;" />
+        <img src="./img/logo-removebg-preview.png" alt="Blusky Jets Logo" style="width: 200px; margin-bottom: 30px;" />
       </div>
       <h3 class="feature-title">Investment in Aviation</h3>
       <p class="feature-desc">
@@ -296,14 +296,14 @@ nav {
         <strong>Approved:</strong> Yes
       </p>
       <div class="feature-buttons">
-        <a href="#enquiry" class="btn-black">ENQUIRY</a>
-        <a href="#learnmore" class="btn-black">LEARN MORE</a>
+        <a href="./contact.html" class="btn-black">ENQUIRY</a>
+        <a href="./Aviation.html" class="btn-black">LEARN MORE</a>
       </div>
     </article>
     
     <article class="feature-card" tabindex="0" aria-label="Feature: Secure and Safe">
       <div class="feature-icon" aria-hidden="true">
-        <img src="./img/WhatsApp_Image_2025-05-21_at_16.27.09_36f24227-removebg-preview.png" alt="Secure & Safe Icon"  style="width: 200px; margin-bottom: 20px;"/>
+        <img src="./img/WhatsApp_Image_2025-05-21_at_16.27.09_36f24227-removebg-preview.png" alt="Secure & Safe Icon"  style="width: 200px;  margin-bottom: 10px; height: 100px;"/>
       </div>
       <h3 class="feature-title">Investment in Real Estate</h3>
       <p class="feature-desc">
@@ -314,14 +314,14 @@ nav {
         <strong>Approved:</strong> Yes
       </p>
       <div class="feature-buttons">
-        <a href="#enquiry" class="btn-black">ENQUIRY</a>
-        <a href="#learnmore" class="btn-black">LEARN MORE</a>
+        <a href="./contact.html" class="btn-black">ENQUIRY</a>
+        <a href="./Real Estate.html" class="btn-black">LEARN MORE</a>
       </div>
     </article>
     
     <article class="feature-card" tabindex="0" aria-label="Feature: 24/7 Support">
       <div class="feature-icon" aria-hidden="true">
-        <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="24/7 Support Icon" style="width: 200px; margin-bottom: 20px;" />
+        <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="24/7 Support Icon" style="width: 200px; margin-bottom: 10px;" />
       </div>
      <h3 class="feature-title">Investment in Commodities</h3>
       <p class="feature-desc">
@@ -332,8 +332,8 @@ nav {
         <strong>Approved:</strong> Yes
       </p>
       <div class="feature-buttons">
-        <a href="#enquiry" class="btn-black">ENQUIRY</a>
-        <a href="#learnmore" class="btn-black">LEARN MORE</a>
+        <a href="./contact.html" class="btn-black">ENQUIRY</a>
+        <a href="./Commodoties.html" class="btn-black">LEARN MORE</a>
       </div>
     </article>
     
@@ -347,6 +347,74 @@ nav {
 
   </div>
 </section>
+<style>.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-icon img {
+  width: 160px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0b1c3e;
+  margin-bottom: 15px;
+}
+
+.feature-desc {
+  font-size: 15px;
+  color: #444;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.feature-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-black {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-black:hover {
+  background-color: #333;
+}
+</style>
 
 <style>
     .features {
@@ -574,7 +642,170 @@ nav {
 </script>
 
 
+</body>
+</html>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Call Now Popup Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+
+    /* Side button */
+    .call-now-btn {
+      position: fixed;
+      right: 0;
+      top: 40%;
+      background-color: #4a2e1e;
+      color: white;
+      padding: 12px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    /* Overlay */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    /* Popup Form */
+    .popup-form {
+      background-color: #0f1127;
+      padding: 25px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      color: white;
+      position: relative;
+    }
+
+    .popup-form h2 {
+      margin-top: 0;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .popup-form input,
+    .popup-form select,
+    .popup-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .popup-form input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .popup-form label {
+      display: block;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .popup-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #c98d53;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .popup-form .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .popup-form .close-btn:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- CALL NOW button -->
+<div class="call-now-btn" onclick="openPopup()">CALL NOW</div>
+
+<!-- Popup Overlay -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-form">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h2>Get a call back from an Advisor</h2>
+    <form id="callbackForm">
+      <input type="text" placeholder="Name*" required>
+      <input type="email" placeholder="Email*" required>
+      <input type="tel" placeholder="+91 Phone Number*" required>
+      
+       <select required>
+        <option value="">I'm Looking To Invest</option>
+        <option value="real_estate">Real Estate</option>
+        <option value="stocks">Aviation</option>
+        <option value="crypto">Commodities</option>
+      </select>
+
+      <select required>
+        <option value="">Where did you hear about us?</option>
+        <option value="google">Google</option>
+        <option value="linkedin">LinkedIn</option>
+        <option value="friend">Friend</option>
+      </select>
+
+      <textarea rows="4" placeholder="Message*" required></textarea>
+
+      <label><input type="checkbox" required> I understand that this inquiry is not for project funding.</label>
+      <label><input type="checkbox" required> I understand that this inquiry is not for job opportunities.</label>
+      <label><input type="checkbox" required> I confirm that I'm a Professional client, Exempt Investor, Accredited Investor...</label>
+
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  document.getElementById("callbackForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Form submitted successfully!");
+    closePopup();
+  });
+</script>
 
 </body>
 </html>
+
+

@@ -1,148 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us</title>
+  <meta charset="UTF-8">
+  <title>Call Now Popup Form</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
     body {
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 2.5rem;
-      color: #222;
-    }
-
-    .contact-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-
-    .contact-info, .contact-form {
-      flex: 1;
-      padding: 30px;
-      min-width: 300px;
-    }
-
-    .contact-info h2 {
-      margin-bottom: 15px;
-      color: #444;
-    }
-
-    .contact-info p {
-      margin: 10px 0;
-      color: #555;
-    }
-
-    .contact-info .social-icons {
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      display: inline-block;
-      margin-right: 10px;
-      color: #555;
-      font-size: 20px;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: #007BFF;
-    }
-
-    .contact-form h2 {
-      margin-bottom: 15px;
-      color: #444;
-    }
-
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-form input, .contact-form textarea {
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    .contact-form button {
-      padding: 12px;
-      background-color: #007BFF;
+    /* Side button */
+    .call-now-btn {
+      position: fixed;
+      right: 0;
+      top: 40%;
+      background-color: #4a2e1e;
       color: white;
-      border: none;
-      border-radius: 5px;
+      padding: 12px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
       cursor: pointer;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    /* Overlay */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    /* Popup Form */
+    .popup-form {
+      background-color: #0f1127;
+      padding: 25px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      color: white;
+      position: relative;
+    }
+
+    .popup-form h2 {
+      margin-top: 0;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .popup-form input,
+    .popup-form select,
+    .popup-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .popup-form input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .popup-form label {
+      display: block;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .popup-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #c98d53;
+      border: none;
+      color: white;
+      font-weight: bold;
       font-size: 16px;
-      transition: background 0.3s;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 4px;
     }
 
-    .contact-form button:hover {
-      background-color: #0056b3;
+    .popup-form .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
     }
 
-    @media (max-width: 768px) {
-      .contact-wrapper {
-        flex-direction: column;
-      }
+    .popup-form .close-btn:hover {
+      color: white;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Contact Us</h1>
-    <div class="contact-wrapper">
+
+<!-- CALL NOW button -->
+<div class="call-now-btn" onclick="openPopup()">CALL NOW</div>
+
+<!-- Popup Overlay -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-form">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h2>Get a call back from an Advisor</h2>
+    <form id="callbackForm">
+      <input type="text" placeholder="Name*" required>
+      <input type="email" placeholder="Email*" required>
+      <input type="tel" placeholder="+91 Phone Number*" required>
       
-      <div class="contact-info">
-        <h2>Get in Touch</h2>
-        <p><strong>Address:</strong> 123 Business Ave, Suite 456, City, Country</p>
-        <p><strong>Email:</strong> contact@yourcompany.com</p>
-        <p><strong>Phone:</strong> +1 (234) 567-8900</p>
-        <div class="social-icons">
-          <a href="#" title="Facebook">🌐</a>
-          <a href="#" title="Twitter">🐦</a>
-          <a href="#" title="LinkedIn">💼</a>
-          <a href="#" title="Instagram">📸</a>
-        </div>
-      </div>
+       <select required>
+        <option value="">I'm Looking To Invest</option>
+        <option value="real_estate">Real Estate</option>
+        <option value="stocks">Aviation</option>
+        <option value="crypto">Commodities</option>
+      </select>
 
-      <div class="contact-form">
-        <h2>Send a Message</h2>
-        <form action="#" method="post">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="subject" placeholder="Subject" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
+      <select required>
+        <option value="">Where did you hear about us?</option>
+        <option value="google">Google</option>
+        <option value="linkedin">LinkedIn</option>
+        <option value="friend">Friend</option>
+      </select>
 
-    </div>
+      <textarea rows="4" placeholder="Message*" required></textarea>
+
+      <label><input type="checkbox" required> I understand that this inquiry is not for project funding.</label>
+      <label><input type="checkbox" required> I understand that this inquiry is not for job opportunities.</label>
+      <label><input type="checkbox" required> I confirm that I'm a Professional client, Exempt Investor, Accredited Investor...</label>
+
+      <button type="submit">SUBMIT</button>
+    </form>
   </div>
+</div>
+
+<script>
+  function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  document.getElementById("callbackForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Form submitted successfully!");
+    closePopup();
+  });
+</script>
+
 </body>
 </html>
