@@ -134,7 +134,7 @@
     </ul>
     </nav>
     <div class="actions">
-      <a href="#" class="button" onclick="openPopupCallNow(); return false;">Schedule a Meeting</a>
+      <a href="#" class="button" onclick="openPopup(); return false;">Schedule a Meeting</a>
 
       <!-- <span class="search">&#128269;</span> -->
     </div>
@@ -676,7 +676,7 @@ nav {
       <div class="footer-columns">
         <div class="footer-column">
           <ul>
-            <li><a href="./index.html">Home</a></li>
+           <li><a href="./index.html">What we are</a></li>
             <!-- <li><a href="#">Features</a></li> -->
             <li><a href="./Investment Models.html">Investment products</a></li>
             <li><a href="./insights.html">Insights</a></li>
@@ -775,5 +775,219 @@ nav {
       }
     }
 </style>
+
+
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1f1f1f;
+      color: white;
+      padding: 15px 30px;
+      z-index: 1000; /* menu layer */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar button {
+      background-color: #c98d53;
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* CALL NOW side button */
+    .call-now-btn {
+      position: fixed;
+      right: 0;
+      top: 40%;
+      background-color: #4a2e1e;
+      color: white;
+      padding: 12px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1500;
+    }
+
+    /* Overlay */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000; /* above navbar */
+    }
+
+    /* Popup Form */
+    .popup-form {
+      background-color: #0f1127;
+      padding: 25px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      color: white;
+      position: relative;
+    }
+
+    .popup-form h2 {
+      margin-top: 0;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .popup-form input,
+    .popup-form select,
+    .popup-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .popup-form input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .popup-form label {
+      display: block;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .popup-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #c98d53;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .popup-form .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .popup-form .close-btn:hover {
+      color: white;
+    }
+
+    /* Main content placeholder */
+    .content {
+      padding: 100px 30px;
+      background-color: #f5f5f5;
+      min-height: 100vh;
+    }
+  </style>
+
+
+  <!-- Top Nav -->
+  <!-- <div class="navbar">
+    <div>
+      <strong>FINAXA INVESTMENTS</strong>
+      <a href="#">WHAT WE ARE</a>
+      <a href="#">INVESTMENT PRODUCTS</a>
+      <a href="#">INSIGHTS</a>
+      <a href="#">CONTACT US</a>
+    </div>
+    <button>Schedule a Meeting</button>
+  </div> -->
+
+  <!-- CALL NOW side button -->
+  <div class="call-now-btn" onclick="openPopup()">Request a Callback</div>
+
+  <!-- Popup Overlay -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-form">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Request of call back</h2>
+      <form id="callbackForm">
+        <input type="text" placeholder="Name*" required>
+        <input type="email" placeholder="Email*" required>
+        <input type="tel" placeholder="+91 Phone Number*" required>
+
+        <select required>
+          <option value="">I'm Looking To Invest</option>
+          <option value="real_estate">Real Estate</option>
+          <option value="aviation">Aviation</option>
+          <option value="commodities">Commodities</option>
+        </select>
+
+        <select required>
+          <option value="">Where did you hear about us?</option>
+          <option value="google">Google</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="friend">Friend</option>
+        </select>
+
+        <textarea rows="4" placeholder="Message*" required></textarea>
+
+        <label><input type="checkbox" required> I understand that this inquiry is not for project funding.</label>
+        <label><input type="checkbox" required> I understand that this inquiry is not for job opportunities.</label>
+        <label><input type="checkbox" required> I confirm that I'm a Professional client, Exempt Investor, Accredited Investor...</label>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Placeholder content -->
+  <!-- <div class="content">
+    <h1>Insights</h1>
+    <p>This is the insights page content below the navbar.</p>
+  </div> -->
+
+  <script>
+    function openPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    document.getElementById("callbackForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Form submitted successfully!");
+      closePopup();
+    });
+  </script>
+
+
 </body>
 </html>

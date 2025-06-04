@@ -130,7 +130,7 @@
     </ul>
     </nav>
     <div class="actions">
-      <a href="#" class="button" onclick="openPopupCallNow(); return false;">Schedule a Meeting</a>
+      <a href="#" class="button" onclick="openPopup(); return false;">Schedule a Meeting</a>
 
       <!-- <span class="search">&#128269;</span> -->
     </div>
@@ -410,7 +410,7 @@ nav {
 
 <body>
   <div class="container">
-    <h1>Finaxa provides fixed Collateral protection</h1>
+    <h1>Finaxa provides fixed ROI with collateral protection</h1>
 
     <div class="features">
 
@@ -560,7 +560,7 @@ nav {
       <div class="footer-columns">
         <div class="footer-column">
           <ul>
-            <li><a href="./index.html">Home</a></li>
+           <li><a href="./index.html">What we are</a></li>
             <!-- <li><a href="#">Features</a></li> -->
             <li><a href="./Investment Models.html">Investment products</a></li>
             <li><a href="./insights.html">Insights</a></li>
@@ -612,22 +612,49 @@ nav {
 </p>
     </div>
   </footer>
-</body>
-</html>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Call Now Popup Form</title>
+
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
+      padding: 0;
     }
 
-    /* Side button */
+    /* Top Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1f1f1f;
+      color: white;
+      padding: 15px 30px;
+      z-index: 1000; /* menu layer */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar button {
+      background-color: #c98d53;
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* CALL NOW side button */
     .call-now-btn {
       position: fixed;
       right: 0;
@@ -639,7 +666,7 @@ nav {
       transform: rotate(180deg);
       cursor: pointer;
       font-weight: bold;
-      z-index: 1000;
+      z-index: 1500;
     }
 
     /* Overlay */
@@ -651,7 +678,7 @@ nav {
       background-color: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
-      z-index: 999;
+      z-index: 2000; /* above navbar */
     }
 
     /* Popup Form */
@@ -717,110 +744,87 @@ nav {
     .popup-form .close-btn:hover {
       color: white;
     }
+
+    /* Main content placeholder */
+    .content {
+      padding: 100px 30px;
+      background-color: #f5f5f5;
+      min-height: 100vh;
+    }
   </style>
-</head>
-<body>
 
-<!-- CALL NOW button -->
-<div class="call-now-btn" onclick="openPopup()">CALL NOW</div>
 
-<!-- Popup Overlay -->
-<div class="popup-overlay" id="popup">
-  <div class="popup-form">
-    <span class="close-btn" onclick="closePopup()">&times;</span>
-          <h2>Request of call back</h2>
-    <form id="callbackForm">
-      <input type="text" placeholder="Name*" required>
-      <input type="email" placeholder="Email*" required>
-      <input type="tel" placeholder="+91 Phone Number*" required>
-      
-       <select required>
-        <option value="">I'm Looking To Invest</option>
-        <option value="real_estate">Real Estate</option>
-        <option value="stocks">Aviation</option>
-        <option value="crypto">Commodities</option>
-      </select>
+  <!-- Top Nav -->
+  <!-- <div class="navbar">
+    <div>
+      <strong>FINAXA INVESTMENTS</strong>
+      <a href="#">WHAT WE ARE</a>
+      <a href="#">INVESTMENT PRODUCTS</a>
+      <a href="#">INSIGHTS</a>
+      <a href="#">CONTACT US</a>
+    </div>
+    <button>Schedule a Meeting</button>
+  </div> -->
 
-      <select required>
-        <option value="">Where did you hear about us?</option>
-        <option value="google">Google</option>
-        <option value="linkedin">LinkedIn</option>
-        <option value="friend">Friend</option>
-      </select>
+  <!-- CALL NOW side button -->
+  <div class="call-now-btn" onclick="openPopup()">Request a Callback</div>
 
-      <textarea rows="4" placeholder="Message*" required></textarea>
+  <!-- Popup Overlay -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-form">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Request of call back</h2>
+      <form id="callbackForm">
+        <input type="text" placeholder="Name*" required>
+        <input type="email" placeholder="Email*" required>
+        <input type="tel" placeholder="+91 Phone Number*" required>
 
-      <label><input type="checkbox" required> I understand that this inquiry is not for project funding.</label>
-      <label><input type="checkbox" required> I understand that this inquiry is not for job opportunities.</label>
-      <label><input type="checkbox" required> I confirm that I'm a Professional client, Exempt Investor, Accredited Investor...</label>
+        <select required>
+          <option value="">I'm Looking To Invest</option>
+          <option value="real_estate">Real Estate</option>
+          <option value="aviation">Aviation</option>
+          <option value="commodities">Commodities</option>
+        </select>
 
-      <button type="submit">SUBMIT</button>
-    </form>
+        <select required>
+          <option value="">Where did you hear about us?</option>
+          <option value="google">Google</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="friend">Friend</option>
+        </select>
+
+        <textarea rows="4" placeholder="Message*" required></textarea>
+
+        <label><input type="checkbox" required> I understand that this inquiry is not for project funding.</label>
+        <label><input type="checkbox" required> I understand that this inquiry is not for job opportunities.</label>
+        <label><input type="checkbox" required> I confirm that I'm a Professional client, Exempt Investor, Accredited Investor...</label>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
   </div>
-</div>
 
-<script>
-  function openPopup() {
-    document.getElementById("popup").style.display = "flex";
-  }
+  <!-- Placeholder content -->
+  <!-- <div class="content">
+    <h1>Insights</h1>
+    <p>This is the insights page content below the navbar.</p>
+  </div> -->
 
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
-
-  document.getElementById("callbackForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("Form submitted successfully!");
-    closePopup();
-  });
-</script>
-
-
- <!-- WhatsApp Floating Button -->
-   <a href="https://wa.me/9710521154446" target="_blank" class="whatsapp-tab">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-
-<style>
-/* WhatsApp Tab Styling */
-    .whatsapp-tab {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      background-color: #25d366;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .whatsapp-tab:hover {
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      transform: scale(1.05);
-    }
-    
-    .whatsapp-tab img {
-      width: 35px;
-      height: 35px;
+  <script>
+    function openPopup() {
+      document.getElementById("popup").style.display = "flex";
     }
 
-    @media (max-width: 768px) {
-      .whatsapp-tab {
-        width: 50px;
-        height: 50px;
-      }
-
-      .whatsapp-tab img {
-        width: 30px;
-        height: 30px;
-      }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
     }
-</style>
+
+    document.getElementById("callbackForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Form submitted successfully!");
+      closePopup();
+    });
+  </script>
+
 </body>
 </html>
