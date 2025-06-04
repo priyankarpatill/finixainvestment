@@ -1,93 +1,838 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Finaxa Footer</title>
-  <link rel="stylesheet" href="footer.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviation Investment | AIX Investment Group</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #000;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    .header .logo img {
+      height: 60px;
+    }
+    .header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    .header nav ul li a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+      color: #000;
+    }
+    .header nav ul li a.active,
+    .header nav ul li a:hover {
+      color: #b07645;
+    }
+    .header .actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .header .actions a.button {
+      border: 1px solid #b07645;
+      padding: 10px 18px;
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    .header .actions a.button:hover {
+      background: #b07645;
+      color: #fff;
+    }
+    .header .actions .search {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* Banner */
+    .banner {
+      background: #000;
+      color: #fff;
+      padding: 60px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .banner h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .banner img {
+      max-height: 180px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 40px;
+      padding: 30px 40px;
+      border-bottom: 1px solid #ccc;
+    }
+    .tabs a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #000;
+      position: relative;
+      padding-bottom: 5px;
+    }
+    .tabs a.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: #b07645;
+    }
+  </style>
 </head>
 <body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" style="width: 250px; height: 120px;"/>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="navbar">
+            <li><a href="./index.html" class="active">What We Are</a></li>
+       <!-- <li><a href="./Features.html">Features</a></li> -->
+      <li>
+        <a href="./Investment Models.html">Investment Products ▾</a>
+        <div class="dropdown">
+          <a href="./Aviation.html">Aviation Investment</a>
+          <a href="./Real Estate.html">Real Estate Investment</a>
+          <a href="./Commodoties.html">Commodities Investment</a>
+        </div>
+      </li>
+      <li><a href="./insights.html">Insights</a></li>
+      <li><a href="./contact.html">Contact Us</a></li>
+    </ul>
+    </nav>
+    <div class="actions">
+      <a href="#" class="button" onclick="openPopupCallNow(); return false;">Schedule a Meeting</a>
+
+      <!-- <span class="search">&#128269;</span> -->
+    </div>
+  </header>
+  <style>
+    
+
+nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      position: relative;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 8px 10px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #a4713d;
+    }
+
+    /* Dropdown Styles */
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      padding: 15px 0;
+      min-width: 200px;
+      border-top: 2px solid #a4713d;
+      z-index: 99;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background: #333;
+    }
+
+    .contact-number {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .phone-icon {
+      margin-right: 5px;
+      color: #a4713d;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: #fff;
+        margin-top: 15px;
+        border-top: 1px solid #ccc;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+  </style>
+
+  <!-- Banner -->
+  <section class="banner">
+    <h1>Aviation Investment</h1>
+    <!-- <img src="./img/" alt="Chart Graphic" /> -->
+  </section>
+ 
+  <style>
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 80px;
+      gap: 40px;
+      background-color: #fff;
+      flex-wrap: wrap;
+    }
+
+    .text-content {
+      flex: 1;
+      position: relative;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 180px;
+    }
+
+    .quote-icon {
+      font-size: 160px;
+      color: #e5cbb4;
+      position: absolute;
+      top: -60px;
+      left: -10px;
+      z-index: -1;
+      line-height: 0.8;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .image-container {
+      flex: 1;
+      position: relative;
+    }
+
+    .image-container::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 100%;
+      height: 100%;
+      background-color: #333333;
+      z-index: 0;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+
+      .image-container::before {
+        display: none;
+      }
+    }
+  </style>
+
+
+  <div class="section">
+    <!-- <div class="quote-icon">“</div> -->
+    <div class="text-content">
+      <div class="logo-container">
+        <img src="./img/logo-removebg-preview.png" alt="Finaxa Investments Logo" style="height: 100px ;">
+      </div>
+      <div class="quote-icon">“</div>
+      <div class="description">
+       At Blusky Jets, we go above and beyond to redefine private aviation. Our clients enjoy a host of cutting-edge benefits, from personalized service experiences and unmatched expertise to exceptional attention to detail—all complemented by a premier fleet of state-of-the-art private jets.
+ <br><br>
+Experience the transformative difference our philosophy brings to every journey and discover more reasons to elevate your travel with Blusky Jets.
+       
+       
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="./img/airplane-flying-mountain-range-high-speed-generative-ai.jpg" alt="Business Jet Image">
+    </div>
+  </div>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #000;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 60px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+  }
+
+  .feature-box {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+  }
+
+  .feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-box img {
+    max-width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+
+  .feature-box h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+
+  .feature-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <h1>Finaxa provides fixed returns with 100% Capital protection</h1>
+
+    <div class="features">
+<div class="feature-box">
+        <img src="./img/fixed-income-icon-budget-260nw-2213776295.jpg" alt="Stable Income Investment">
+        <h3>Fixed Income </h3>
+        <p>Clients benefit by preserving their invested capital, enabled by the 100% payback of the bond.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="./img/4347642-200.png" alt="Portfolio Diversification">
+        <h3>Portfolio Diversification</h3>
+        <p>Bonds carry low volatility as compared to equity or mutual fund and other comparable investments.</p>
+      </div>
+
+       <div class="feature-box">
+        <img src="./img/passive-income-earnings-line-icon-260nw-2003586317.jpg" alt="Steady Income">
+        <h3>Study Income</h3>
+        <p>Bonds enable efficient portfolio diversification and thus assist in portfolio risk-mitigation.</p>
+      </div>
+
+      
+
+      <div class="feature-box">
+        <img src="./img/global-reach-icon-can-be-260nw-2463934699.jpg" alt="Global Reach">
+        <h3>Global Advantage</h3>
+        <p>Fixed-income coupon bonds provide investors with a steady stream of income, allowing them to enjoy streamlined cashflow.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="./img/istockphoto-1396661215-612x612.jpg" alt="Low Market Volatility">
+        <h3>Low Market Volatility</h3>
+        <p>As a publicly listed bond, Net Asset Value is available at the Vienna Stock Exchange and Bloomberg Terminal.</p>
+      </div>
+
+      
+<div class="feature-box">
+        <img src="./img/investment-risk-icon-icon-related-to-investments-and-financial-concepts-line-icon-style-simple-design-editable-vector.jpg" alt="Low Risk Investment">
+        <h3>Mild Risk Investment</h3>
+        <p>Being a listed financial security with its own ISIN number allows access to the bond subscription globally.</p>
+      </div>
+      
+
+     
+
+    </div>
+  </div>
+</body>
+
+
+  <style>
+    .footer {
+      background-color: #0e0f16;
+      color: white;
+      padding: 60px 20px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      flex: 1 1 250px;
+    }
+
+    .footer-logo img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .footer-address {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-address b {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex: 2 1 600px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .footer-column {
+      flex: 1 1 150px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column li {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .footer-column li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-column li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-disclaimer {
+      max-width: 1200px;
+      margin: 40px auto 20px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #ccc;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Footer Section -->
   <footer class="footer">
     <div class="footer-container">
+      <!-- Logo & Address -->
       <div class="footer-logo">
-        <img src="logo.png" alt="Finaxa Investments Logo">
+        <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group"  style="width: 200px; height: 100px;">
+        <!-- <div class="footer-address">
+          <b>United Arab Emirates</b>
+          Downtown, Dubai<br>
+          Burj Khalifa<br>
+          146<sup>th</sup> Floor<br><br>
+          <b>Phone</b><br>
+          +971 4 546 0000
+        </div> -->
       </div>
-      <div class="footer-links">
-        <div class="column">
-          <a href="#">Home</a>
-          <a href="#">Investment products</a>
-          <a href="#">Insights</a>
+
+      <!-- Navigation Columns -->
+      <div class="footer-columns">
+        <div class="footer-column">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <!-- <li><a href="#">Features</a></li> -->
+            <li><a href="./Investment Models.html">Investment products</a></li>
+            <li><a href="./insights.html">Insights</a></li>
+            <!-- <li><a href="#">Careers</a></li> -->
+          </ul>
         </div>
-        <div class="column">
-          <a href="#">Contact Us</a>
-          <a href="#">Privacy Policy</a>
+        <div class="footer-column">
+          <ul>
+            <li><a href="./contact.html">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <!-- <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Disclaimer</a></li> -->
+          </ul>
         </div>
-        <div class="column">
-          <a href="#">Overview</a>
-          <a href="#">Who We Are</a>
-          <a href="#">What We Do</a>
-          <a href="#">Our Approach</a>
-        </div>
+        <!-- <div class="footer-column">
+          <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Who We Are</a></li>
+            <li><a href="#">What We Do</a></li>
+            <li><a href="#">Our Approach</a></li>
+          </ul>
+        </div> -->
       </div>
     </div>
+
+    <!-- Disclaimer -->
+    <!-- <div class="footer-disclaimer">
+      <p>
+        AIX Financial Consultation LLC is a financial advisory company incorporated in the United Arab Emirates,
+        duly licensed by Dubai Economy and Tourism (DET) with license number 869463 and regulated by Securities
+        and Commodities Authority - UAE (SCA), to promote financial products, introduce financial services and
+        provide financial advisory for potential investors.
+      </p>
+      <p>
+        AIX Financial Consultation LLC allows only professional investors to invest, once they have considered
+        their investment objectives and risk tolerance and have sought independent advice from professionals and
+        experts if necessary.
+      </p>
+    </div> -->
+
+    <!-- Bottom -->
     <div class="footer-bottom">
-      <p>Copyright © 2025 Finaxa Investment , All Rights Reserved. Finaxa Investment Group is a registered trademark.</p>
-    </div>
+       <p>
+  &copy; 2025 Finaxa Investment, All Rights Reserved.
+
+  <span class="designer">
+    Designed by <a href="https://shaswathagroups.com" target="_blank" style="color: gray;">Shaswatha Groups</a>
+  </span>
+</p>
   </footer>
+
+
+
+   <!-- WhatsApp Floating Button -->
+   <a href="https://wa.me/9710521154446" target="_blank" class="whatsapp-tab">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+<style>
+/* WhatsApp Tab Styling */
+    .whatsapp-tab {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .whatsapp-tab:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transform: scale(1.05);
+    }
+    
+    .whatsapp-tab img {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-tab {
+        width: 50px;
+        height: 50px;
+      }
+
+      .whatsapp-tab img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+</style>
 </body>
 </html>
 
-<style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Call Now Popup Form</title>
+  <style>
     body {
-  margin: 0;
-  padding: 0;
-  background-color: #0c0c12;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
 
-.footer {
-  background-color: #0c0c12;
-  color: white;
-  padding: 40px 60px 20px;
-}
+    /* Side button */
+    .call-now-btn {
+      position: fixed;
+      right: 0;
+      top: 40%;
+      background-color: #4a2e1e;
+      color: white;
+      padding: 12px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1000;
+    }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
+    /* Overlay */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
 
-.footer-logo img {
-  width: 180px;
-}
+    /* Popup Form */
+    .popup-form {
+      background-color: #0f1127;
+      padding: 25px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      color: white;
+      position: relative;
+    }
 
-.footer-links {
-  display: flex;
-  gap: 80px;
-}
+    .popup-form h2 {
+      margin-top: 0;
+      font-size: 22px;
+      text-align: center;
+    }
 
-.footer-links .column {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+    .popup-form input,
+    .popup-form select,
+    .popup-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+    }
 
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-}
+    .popup-form input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
 
-.footer-links a:hover {
-  text-decoration: underline;
-}
+    .popup-form label {
+      display: block;
+      font-size: 14px;
+      margin-top: 8px;
+    }
 
-.footer-bottom {
-  text-align: center;
-  font-size: 13px;
-  color: #cccccc;
-  margin-top: 30px;
-}
+    .popup-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #c98d53;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
 
-</style>
+    .popup-form .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .popup-form .close-btn:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- CALL NOW button -->
+<div class="call-now-btn" onclick="openPopup()">CALL NOW</div>
+
+<!-- Popup Overlay -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-form">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+          <h2>Request of call back</h2>
+    <form id="callbackForm">
+      <input type="text" placeholder="Name*" required>
+      <input type="email" placeholder="Email*" required>
+      <input type="tel" placeholder="+91 Phone Number*" required>
+      
+       <select required>
+        <option value="">I'm Looking To Invest</option>
+        <option value="real_estate">Real Estate</option>
+        <option value="stocks">Aviation</option>
+        <option value="crypto">Commodities</option>
+      </select>
+
+      <select required>
+        <option value="">Where did you hear about us?</option>
+        <option value="google">Google</option>
+        <option value="linkedin">LinkedIn</option>
+        <option value="friend">Friend</option>
+      </select>
+
+      <textarea rows="4" placeholder="Message*" required></textarea>
+
+      <label><input type="checkbox" required> I understand that this inquiry is not for project funding.</label>
+      <label><input type="checkbox" required> I understand that this inquiry is not for job opportunities.</label>
+      <label><input type="checkbox" required> I confirm that I'm a Professional client, Exempt Investor, Accredited Investor...</label>
+
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  document.getElementById("callbackForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Form submitted successfully!");
+    closePopup();
+  });
+</script>
+
+</body>
+</html>
