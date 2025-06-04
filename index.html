@@ -286,11 +286,21 @@ nav {
     </div>
   </div>
   <div class="slide" style="background-image: url('./img/1.jpg')">
-    <div class="text-overlay">
+    <div class="text-overlay" style=" top: 74%; ">
       <h2>Assured Returns Upto 20%</h2>
       <!-- <p>Invests wisely with Finaxa Investment Group</p> -->
     </div>
   </div>
+
+   <!-- Timeline Indicator -->
+ <div class="custom-progress-bar">
+  <span class="label left">High Returns</span>
+  <div class="track">
+    <div class="indicator"></div>
+  </div>
+  <span class="label right">Start Investing Today</span>
+</div>
+
 
   <div class="progress-line"></div>
 
@@ -298,6 +308,92 @@ nav {
   <button class="arrow next">&#10095;</button> -->
 </div>
 <style>
+
+  .custom-progress-bar {
+  position: absolute;
+  top: 98%; /* ⬅️ Move it slightly down (adjust as needed: try 70-75%) */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  z-index: 5;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+
+
+.custom-progress-bar .label {
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+}
+
+.custom-progress-bar .track {
+  flex: 1;
+  height: 4px;
+  background-color: #c0c0c0;
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-progress-bar .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #b07240;
+  transition: width 5s linear;
+}
+
+
+  .timeline {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.timeline .bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.timeline .bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #b07240;
+  width: 0%;
+  animation: none;
+}
+
+.timeline .bar.active::before {
+  animation: fillBar 5s linear forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+
+
 .hero-slider {
   position: relative;
   height: 100vh;
@@ -377,32 +473,72 @@ nav {
   to { width: 100%; }
 }
 </style>
+
+
+
 <script>
 const slides = document.querySelectorAll('.slide');
-const progress = document.querySelector('.progress-line');
+const bars = document.querySelectorAll('.timeline .bar');
 let current = 0;
+
+function showSlide(index) {
+  slides[current].classList.remove('active');
+  bars[current].classList.remove('active');
+
+  current = index;
+
+  slides[current].classList.add('active');
+  bars[current].classList.add('active');
+
+  // Restart animation by triggering reflow
+  const bar = bars[current].querySelector('::before'); // This doesn't work with pseudo-elements
+  bars.forEach(bar => {
+    bar.style.setProperty('--progress', '0%');
+    bar.classList.remove('active');
+    bar.offsetHeight; // trigger reflow
+  });
+  bars[current].classList.add('active');
+}
+
+// Click support (optional)
+bars.forEach((bar, index) => {
+  bar.addEventListener('click', () => {
+    showSlide(index);
+    resetInterval(); // reset autoplay
+  });
+});
+
+// Auto-slide
+let slideInterval = setInterval(() => {
+  showSlide((current + 1) % slides.length);
+}, 5000);
+
+// Restart interval on manual control
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(() => {
+    showSlide((current + 1) % slides.length);
+  }, 5000);
+}
+
+
+
+const indicator = document.querySelector('.custom-progress-bar .indicator');
 
 function showSlide(index) {
   slides[current].classList.remove('active');
   current = index;
   slides[current].classList.add('active');
 
-  // Restart progress animation
-  progress.style.animation = 'none';
-  void progress.offsetWidth; // Trigger reflow
-  progress.style.animation = 'progressBar 5s linear infinite';
+  // Reset and trigger progress bar animation
+  indicator.style.transition = 'none';
+  indicator.style.width = '0%';
+  void indicator.offsetWidth; // reflow
+  indicator.style.transition = 'width 5s linear';
+  indicator.style.width = '100%';
 }
 
-// Initial load
-showSlide(current);
-
-// Auto slide every 5 seconds
-setInterval(() => {
-  showSlide((current + 1) % slides.length);
-}, 5000);
 </script>
-
-
 
 
  
