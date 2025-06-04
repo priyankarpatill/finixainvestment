@@ -78,7 +78,8 @@
     /* Hero Section */
     .hero {
       height: 100vh;
-      background-image: url('../img/pexels-jeshoots-com-147458-442579.jpg'); /* Replace with your image path */
+      /* background-image: url('../img/pexels-jeshoots-com-147458-442579.jpg'); */
+       /* Replace with your image path */
       background-size: cover;
       background-position: center;
       display: flex;

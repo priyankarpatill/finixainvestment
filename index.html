@@ -134,11 +134,11 @@
     </ul>
     </nav>
     <div class="actions">
-      <a href="./contact.html" style="
+        <a href="#" class="button" onclick="openPopup(); return false;" style="
       border: 1px solid #b07645;
       padding: 10px 18px;
       text-decoration: none;
-      color: #b07645;
+      color: white;
       font-weight: 600;
       border-radius: 4px;
       transition: 0.3s;
@@ -275,11 +275,125 @@ nav {
   </style>
 
 <main>
-  <section class="hero" id="hero">
+  <!-- <section class="hero" id="hero"> -->
   
   
-</section>
+<!-- </section> -->
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide active">
+      <img src="./img/main.jpg" alt="Slide 1" />
+      <div class="text-overlay">
+        <h2>Smarter Investment</h2>
+        <p>Builds his financial future with Finaxa Investment Group</p>
+        <!-- <button id="popup">SCHEDULE A MEETING</button>
 
+<a href="#" class="button" onclick="openPopup(); return false;">Schedule a Meeting</a> -->
+      </div>
+    </div>
+    <div class="slide">
+      <img src="./img/al-jadaf-walk-dubai.jpg" alt="Slide 2" />
+      <div class="text-overlay">
+        <h2>Assured Returns Upto 20%</h2>
+        <p>Invests wisely with Finaxa Investment Group</p>
+        <!-- <button>SCHEDULE A MEETING</button> -->
+      </div>
+    </div>
+  </div>
+
+  <button class="arrow prev">&#10094;</button>
+  <button class="arrow next">&#10095;</button>
+</div>
+<style>.slider-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  text-align: left;
+  color: white;
+  max-width: 40%;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+
+.text-overlay h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.text-overlay p {
+  margin: 10px 0;
+}
+
+.text-overlay button {
+  padding: 10px 20px;
+  background-color: #b07240;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow.prev {
+  left: 10px;
+}
+
+.arrow.next {
+  right: 10px;
+}
+</style>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  document.querySelector('.next').onclick = () => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  };
+
+  document.querySelector('.prev').onclick = () => {
+    slides[current].classList.remove('active');
+    current = (current - 1 + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  };
+</script>
  
 </main>
 
