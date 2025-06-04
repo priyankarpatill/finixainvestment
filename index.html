@@ -470,7 +470,7 @@ nav {
       <div class="label">INVESTMENT TENURE</div>
     </div>
     <div class="stat">
-      <div class="number" data-target="100000" data-suffix=" $">0 $</div>
+      <div class="number" data-target="100000" data-suffix=" AED">0 AED</div>
       <div class="label">MINIMUM INVESTMENT</div>
     </div>
   </section>
@@ -504,7 +504,7 @@ nav {
 
 <section class="why-choose" style="background-color: #333333;">
   <div class="container">
-    <div class="quote-heading">“</div>
+    <!-- <div class="quote-heading">“</div> -->
     <h2 style="color: white;">Why Choose Finaxa?</h2>
     <p class="subtitle" style="color: white;">Built on trust, driven by innovation, and committed to delivering long-term value.</p>
 
@@ -1096,5 +1096,53 @@ nav {
     });
   </script>
 
+
+
+ <!-- WhatsApp Floating Button -->
+   <a href="https://wa.me/9710521154446" target="_blank" class="whatsapp-tab">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+<style>
+/* WhatsApp Tab Styling */
+    .whatsapp-tab {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .whatsapp-tab:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transform: scale(1.05);
+    }
+    
+    .whatsapp-tab img {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-tab {
+        width: 50px;
+        height: 50px;
+      }
+
+      .whatsapp-tab img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+</style>
 </body>
 </html>

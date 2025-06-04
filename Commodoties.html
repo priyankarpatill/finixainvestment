@@ -254,101 +254,94 @@ nav {
     <h1 style="color: white;">Commodity Investment</h1>
     <!-- <img src="./img/" alt="Chart Graphic" /> -->
   </section>
- 
   <style>
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    gap: 60px;
+    background-color: #fff;
+    flex-wrap: wrap;
+  }
+
+  .text-content {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .logo-container img {
+    width: 200px;
+    margin-bottom: 30px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #2e2e2e;
+  }
+
+  .image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+  }
+
+  .image-container::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+    z-index: 0;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 900px) {
     .section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 80px;
-      gap: 40px;
-      background-color: #fff;
-      flex-wrap: wrap;
-    }
-
-    .text-content {
-      flex: 1;
-      position: relative;
-    }
-
-    .logo-container {
-      margin-bottom: 20px;
-    }
-
-    .logo-container img {
-      width: 180px;
-    }
-
-    .quote-icon {
-      font-size: 160px;
-      color: #e5cbb4;
-      position: absolute;
-      top: -60px;
-      left: -10px;
-      z-index: -1;
-      line-height: 0.8;
-    }
-
-    .description {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #333;
-      margin-bottom: 30px;
-    }
-
-    .image-container {
-      flex: 1;
-      position: relative;
+      flex-direction: column;
+      padding: 40px 20px;
     }
 
     .image-container::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      left: -40px;
-      width: 100%;
-      height: 100%;
-      background-color: #f9ede7;
-      z-index: 0;
+      display: none;
     }
-
-    .image-container img {
-      width: 100%;
-      height: auto;
-      position: relative;
-      z-index: 1;
-      object-fit: cover;
-    }
-
-    @media (max-width: 900px) {
-      .section {
-        flex-direction: column;
-        padding: 40px 20px;
-      }
-
-      .image-container::before {
-        display: none;
-      }
-    }
-  </style>
+  }
+</style>
 
 
-  <div class="section">
-    <div class="text-content">
-      <div class="logo-container">
-        <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="Finaxa Investments Logo" style="height: 150px; width: 270px;">
-      </div>
-      <div class="quote-icon">“</div>
-      <div class="description">
-       Commodity investment involves trading physical goods like gold, oil, and agricultural products. It helps diversify portfolios and hedge against inflation. Commodities often move independently of stock markets, offering balance in volatile times. Investors can trade through futures, ETFs, or direct ownership. It's a powerful strategy for long-term growth and financial security.
-        
-      </div>
+
+
+
+<div class="section">
+  <div class="text-content">
+    <div class="logo-container">
+      <img src="./img/finixa.png" alt="Blusky Jets Logo" style="height: 100px; width: 210px;">
     </div>
-
-    <div class="image-container">
-      <img src="./img/WhatsApp Image 2025-06-03 at 17.04.41_2b1087b2.jpg" alt="Business Jet Image">
+    <div class="description">
+     Commodity investment involves trading physical goods like gold, oil, and agricultural products. It helps diversify portfolios and hedge against inflation. Commodities often move independently of stock markets, offering balance in volatile times. Investors can trade through futures, ETFs, or direct ownership. It's a powerful strategy for long-term growth and financial security.
+    <br>"Commodities offer more than just trade—they offer protection. Gold, oil, and agriculture help hedge against inflation and market swings, giving investors stability and strength through every cycle."
     </div>
   </div>
+
+  <div class="image-container">
+    <img src="./img/WhatsApp Image 2025-06-03 at 17.04.41_2b1087b2.jpg" alt="Private Jet">
+  </div>
+</div>
+
 
 
 
@@ -671,6 +664,54 @@ nav {
 </p>
     </div>
   </footer>
+
+
+   <!-- WhatsApp Floating Button -->
+   <a href="https://wa.me/9710521154446" target="_blank" class="whatsapp-tab">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+<style>
+/* WhatsApp Tab Styling */
+    .whatsapp-tab {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .whatsapp-tab:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transform: scale(1.05);
+    }
+    
+    .whatsapp-tab img {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-tab {
+        width: 50px;
+        height: 50px;
+      }
+
+      .whatsapp-tab img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+</style>
 </body>
 </html>
 

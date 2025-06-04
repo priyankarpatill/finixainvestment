@@ -254,110 +254,98 @@ nav {
     <h1>Real Estate Investment</h1>
     <!-- <img src="./img/" alt="Chart Graphic" /> -->
   </section>
-  <style>
+  
 
- 
+ <style>
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    gap: 60px;
+    background-color: #fff;
+    flex-wrap: wrap;
+  }
+
+  .text-content {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .logo-container img {
+    width: 200px;
+    margin-bottom: 30px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #2e2e2e;
+  }
+
+  .image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+  }
+
+  .image-container::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+    z-index: 0;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 900px) {
     .section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 80px;
-      gap: 40px;
-      background-color: #fff;
-      flex-wrap: wrap;
-    }
-
-    .text-content {
-      flex: 1;
-      position: relative;
-    }
-
-    .logo-container {
-      margin-bottom: 20px;
-    }
-
-    .logo-container img {
-      width: 180px;
-    }
-
-    .quote-icon {
-      font-size: 160px;
-      color: #e5cbb4;
-      position: absolute;
-      top: -60px;
-      left: -10px;
-      z-index: -1;
-      line-height: 0.8;
-    }
-
-    .description {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #333;
-      margin-bottom: 30px;
-    }
-
-    .image-container {
-      flex: 1;
-      position: relative;
+      flex-direction: column;
+      padding: 40px 20px;
     }
 
     .image-container::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      left: -40px;
-      width: 100%;
-      height: 100%;
-      background-color: #f9ede7;
-      z-index: 0;
+      display: none;
     }
-
-    .image-container img {
-      width: 100%;
-      height: auto;
-      position: relative;
-      z-index: 1;
-      object-fit: cover;
-    }
-
-    @media (max-width: 900px) {
-      .section {
-        flex-direction: column;
-        padding: 40px 20px;
-      }
-
-      .image-container::before {
-        display: none;
-      }
-    }
-  </style>
+  }
+</style>
 
 
 
-  <div class="section">
-    <div class="text-content">
-        <div class="logo-container">
-        <img src="./img/WhatsApp_Image_2025-05-21_at_16.27.09_36f24227-removebg-preview.png" alt="Finaxa Investments Logo" style="height: 150px; width: 250px;">
-      </div>
-      <div class="quote-icon">“</div>
-      <!-- <div class="heading">Real Estate Investment</div> -->
-      <div class="description">
-      Real estate is more than just buildings and land,
-It's where dreams begin and futures expand.
-From cozy homes to spaces that inspire,
-We help you find the place you truly desire.
 
 
-      </div>
-      <!-- <a href="#" class="button">TO KNOW MORE &gt;&gt;</a> -->
+<div class="section">
+  <div class="text-content">
+    <div class="logo-container">
+      <img src="./img/relam.png" alt="Blusky Jets Logo" style="height: 110px;">
     </div>
-
-    <div class="image-container">
-      <img src="./img/istockphoto-2154752387-612x612.jpg" alt="Business Meeting">
-      <!-- Replace the above placeholder with your own image URL or local path -->
+    <div class="description">
+      Real estate is more than just buildings and land, It's where dreams begin and futures expand. From cozy homes to spaces that inspire, We help you find the place you truly desire.
+    <br>"More than structures of steel and stone, real estate is where memories are grown. From the first step through the front door to years of laughter and milestones galore—we help you find not just a property, but a place to truly belong."
     </div>
   </div>
+
+  <div class="image-container">
+    <img src="./img/real-estate-investing-for-beginners-1.jpg" alt="Private Jet">
+  </div>
+</div>
+
+
+
 <style>
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -787,5 +775,52 @@ We help you find the place you truly desire.
   });
 </script>
 
+
+ <!-- WhatsApp Floating Button -->
+   <a href="https://wa.me/9710521154446" target="_blank" class="whatsapp-tab">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+<style>
+/* WhatsApp Tab Styling */
+    .whatsapp-tab {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .whatsapp-tab:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transform: scale(1.05);
+    }
+    
+    .whatsapp-tab img {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-tab {
+        width: 50px;
+        height: 50px;
+      }
+
+      .whatsapp-tab img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+</style>
 </body>
 </html>
