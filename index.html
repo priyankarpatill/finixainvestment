@@ -277,69 +277,58 @@ nav {
 <main>
   <!-- <section class="hero" id="hero"> -->
   
-  
-<!-- </section> -->
-<div class="slider-container">
-  <div class="slider">
-    <div class="slide active">
-      <img src="./img/main.jpg" alt="Slide 1" />
-      <div class="text-overlay">
-        <h2>Smarter Investment</h2>
-        <p>Builds his financial future with Finaxa Investment Group</p>
-        <!-- <button id="popup">SCHEDULE A MEETING</button>
-
-<a href="#" class="button" onclick="openPopup(); return false;">Schedule a Meeting</a> -->
-      </div>
+ <div class="hero-slider">
+  <div class="slide active" style="background-image: url('./img/main.jpg')">
+    <div class="text-overlay">
+      <h2>Smarter Investment</h2>
+      <p style="font-size: 2rem;">Stronger Returns</p>
+      <!-- <button>SCHEDULE A MEETING</button> -->
     </div>
-    <div class="slide">
-      <img src="./img/al-jadaf-walk-dubai.jpg" alt="Slide 2" />
-      <div class="text-overlay">
-        <h2>Assured Returns Upto 20%</h2>
-        <p>Invests wisely with Finaxa Investment Group</p>
-        <!-- <button>SCHEDULE A MEETING</button> -->
-      </div>
+  </div>
+  <div class="slide" style="background-image: url('./img/1.jpg')">
+    <div class="text-overlay">
+      <h2>Assured Returns Upto 20%</h2>
+      <!-- <p>Invests wisely with Finaxa Investment Group</p> -->
     </div>
   </div>
 
-  <button class="arrow prev">&#10094;</button>
-  <button class="arrow next">&#10095;</button>
+  <div class="progress-line"></div>
+
+  <!-- <button class="arrow prev">&#10094;</button>
+  <button class="arrow next">&#10095;</button> -->
 </div>
-<style>.slider-container {
+<style>
+.hero-slider {
   position: relative;
-  max-width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
 .slide {
-  min-width: 100%;
-  position: relative;
-  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .slide.active {
-  display: block;
+  opacity: 1;
+  z-index: 1;
 }
 
-.slide img {
-  width: 100%;
-  height: auto;
-}
 .text-overlay {
   position: absolute;
   top: 50%;
-  left: 5%;
+  left: 10%;
   transform: translateY(-50%);
-  text-align: left;
   color: white;
   max-width: 40%;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
-
 
 .text-overlay h2 {
   font-size: 3rem;
@@ -353,8 +342,8 @@ nav {
 .text-overlay button {
   padding: 10px 20px;
   background-color: #b07240;
-  color: white;
   border: none;
+  color: white;
   cursor: pointer;
 }
 
@@ -362,38 +351,60 @@ nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 2rem;
   padding: 10px;
-  border: none;
   cursor: pointer;
+  z-index: 2;
 }
 
-.arrow.prev {
-  left: 10px;
+.arrow.prev { left: 20px; }
+.arrow.next { right: 20px; }
+
+.progress-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: #b07240;
+  width: 0%;
+  animation: progressBar 5s linear infinite;
 }
 
-.arrow.next {
-  right: 10px;
+@keyframes progressBar {
+  from { width: 0%; }
+  to { width: 100%; }
 }
 </style>
 <script>
-  const slides = document.querySelectorAll('.slide');
-  let current = 0;
+const slides = document.querySelectorAll('.slide');
+const progress = document.querySelector('.progress-line');
+let current = 0;
 
-  document.querySelector('.next').onclick = () => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  };
+function showSlide(index) {
+  slides[current].classList.remove('active');
+  current = index;
+  slides[current].classList.add('active');
 
-  document.querySelector('.prev').onclick = () => {
-    slides[current].classList.remove('active');
-    current = (current - 1 + slides.length) % slides.length;
-    slides[current].classList.add('active');
-  };
+  // Restart progress animation
+  progress.style.animation = 'none';
+  void progress.offsetWidth; // Trigger reflow
+  progress.style.animation = 'progressBar 5s linear infinite';
+}
+
+// Initial load
+showSlide(current);
+
+// Auto slide every 5 seconds
+setInterval(() => {
+  showSlide((current + 1) % slides.length);
+}, 5000);
 </script>
+
+
+
+
  
 </main>
 
@@ -850,7 +861,7 @@ nav {
 
 
 
-
+<!-- 
   <section id="testimonials" class="testimonials" aria-label="Testimonials Section">
     <h2>What Our Clients Say</h2>
     <div class="testimonials-container">
@@ -870,7 +881,7 @@ nav {
         <p class="testimonial-name">Lisa W.</p>
       </article>
     </div>
-  </section>
+  </section> -->
 
   <section id="contact" class="contact" aria-label="Contact Section">
     <h2>Contact Us</h2>
