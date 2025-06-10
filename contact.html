@@ -3,53 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <title>Finaxa Investments</title>
-  <link rel="stylesheet" href="./css/style.css" />
- 
-</head>
-<body>
- <style>
+  <title>Finaxa Investments</title>
+  <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       color: #000;
     }
 
-    /* Header */
     .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 40px;
-      border-bottom: 1px solid #ddd;
+      background: #333;
     }
-    .header .logo img {
+
+    .logo img {
       height: 60px;
     }
-    .header nav ul {
+
+    nav.desktop-nav ul {
       display: flex;
       list-style: none;
       gap: 30px;
       margin: 0;
       padding: 0;
     }
-    .header nav ul li a {
+
+    nav.desktop-nav ul li a {
       text-decoration: none;
       text-transform: uppercase;
       font-weight: 600;
       font-size: 14px;
       color: white;
     }
-    .header nav ul li a.active,
-    .header nav ul li a:hover {
+
+    nav.desktop-nav ul li a:hover,
+    nav.desktop-nav ul li a.active {
       color: #b07645;
     }
-    .header .actions {
+
+    .actions {
       display: flex;
       gap: 20px;
       align-items: center;
     }
-    .header .actions a.button {
+
+    .actions a.button {
       border: 1px solid #b07645;
       padding: 10px 18px;
       text-decoration: none;
@@ -58,87 +59,182 @@
       border-radius: 4px;
       transition: 0.3s;
     }
-    .header .actions a.button:hover {
+
+    .actions a.button:hover {
       background: #b07645;
       color: #fff;
     }
-    .header .actions .search {
-      font-size: 18px;
+
+    /* Menu icon (☰) */
+    .menu-toggle {
+      display: none;
+      font-size: 32px;
+      color: white;
+      background: none;
+      border: none;
       cursor: pointer;
     }
 
-    /* Banner */
-    .banner {
-      background: #000;
-      color: #fff;
-      padding: 60px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .banner h1 {
-      font-size: 36px;
-      font-weight: 700;
-      margin: 0;
-    }
-    .banner img {
-      max-height: 180px;
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      height: 100%;
+      background-color: #0d1321;
+      z-index: 1000;
+      transition: right 0.3s ease-in-out;
+      padding: 30px 20px;
     }
 
-    /* Tabs */
-    .tabs {
-      display: flex;
-      gap: 40px;
-      padding: 30px 40px;
-      border-bottom: 1px solid #ccc;
+    .mobile-menu.active {
+      right: 0;
     }
-    .tabs a {
+
+    .mobile-menu .close-btn {
+      font-size: 28px;
+      color: white;
+      text-align: right;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-menu ul li {
+      margin-bottom: 20px;
+    }
+
+    .mobile-menu ul li a {
+      color: white;
       text-decoration: none;
-      font-weight: 700;
-      color: #000;
-      position: relative;
-      padding-bottom: 5px;
+      font-size: 18px;
+      display: block;
     }
-    .tabs a.active::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 100%;
-      background: #b07645;
+
+    .mobile-submenu {
+      display: none;
+      padding-left: 15px;
     }
+
+    .mobile-submenu li a {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    /* Responsive behavior */
+    @media (max-width: 768px) {
+      nav.desktop-nav,
+      .actions {
+        display: none !important;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+
+    /* .menu-toggle {
+  display: block !important;
+  background: red;
+} */
+.menu-toggle {
+  display: none;
+}
+
+/* Only show the menu icon on mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+    background: white;
+  }
+}
+
+
   </style>
 </head>
 <body>
-  <!-- Header -->
+
   <header class="header">
     <div class="logo">
-      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group"  style="width: 250px; height: 120px;"/>
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="Finaxa Investments" style="width: 250px; height: 120px;" />
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav>
-      <ul id="navbar">
-            <li><a href="./index.html" class="active">What We Are</a></li>
-       <!-- <li><a href="./Features.html">Features</a></li> -->
+
+    <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="./index.html" class="active">What We Are</a></li>
+        <li>
+          <a href="./Investment Models.html">
+    Investment Products
+    <span onclick="event.preventDefault(); toggleMobileDropdown()" style="cursor:pointer;"> ▾</span>
+  </a>
+          <div class="dropdown">
+            <a href="./Aviation.html">Aviation Investment</a>
+            <a href="./Real Estate.html">Real Estate Investment</a>
+            <a href="./Commodoties.html">Commodities Investment</a>
+          </div>
+        </li>
+        <li><a href="./insights.html">Insights</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <a href="#" class="button" onclick="openPopup(); return false;">Schedule a Meeting</a>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="close-btn" onclick="toggleMobileMenu()">×</div>
+    <ul>
+      <li><a href="./index.html">What We Are</a></li>
       <li>
-        <a href="./Investment Models.html">Investment Products ▾</a>
-        <div class="dropdown">
-          <a href="./Aviation.html">Aviation Investment</a>
-          <a href="./Real Estate.html">Real Estate Investment</a>
-          <a href="./Commodoties.html">Commodities Investment</a>
-        </div>
+  <a href="./Investment Models.html">
+  Investment Models
+  <span onclick="event.preventDefault(); toggleMobileDropdown()" style="cursor: pointer;"> ▾</span>
+</a>
+        <ul class="mobile-submenu" id="mobileDropdownMenu">
+          <li><a href="./Aviation.html">Aviation Investment</a></li>
+          <li><a href="./Real Estate.html">Real Estate Investment</a></li>
+          <li><a href="./Commodoties.html">Commodities Investment</a></li>
+        </ul>
       </li>
       <li><a href="./insights.html">Insights</a></li>
       <li><a href="./contact.html">Contact Us</a></li>
     </ul>
-    </nav>
-    <div class="actions">
-      <a href="#" class="button" onclick="openPopup(); return false;">Schedule a Meeting</a>
+  </div>
 
-      <!-- <span class="search">&#128269;</span> -->
-    </div>
-  </header>
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    function toggleMobileDropdown() {
+      const submenu = document.getElementById('mobileDropdownMenu');
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function openPopup() {
+      alert("This would open the Schedule a Meeting popup.");
+    }
+  </script>
+
+
+
+
+
+
+
+
 <style>
     .hero {
       height: 100vh;
@@ -535,7 +631,9 @@ nav {
       <!-- Contact Form -->
       <div class="contact-form">
         <h2>Send a Message</h2>
-        <form action="#" method="post">
+     <!-- <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="8605b1bd-ef7b-482d-99af-68cc08caa680"> -->
+<form id="contactForm">
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <input type="text" name="number" placeholder="Phone Number" required />
@@ -567,6 +665,28 @@ nav {
       </div>
     </div>
   </div>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop normal form submission
+
+    // Collect form values
+    const name = document.querySelector('input[name="name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const number = document.querySelector('input[name="number"]').value;
+    const investment = document.querySelector('select[name="investment"]').value;
+    const referral = document.querySelector('select[name="referral"]').value;
+    const message = document.querySelector('textarea[name="message"]').value;
+
+    // Compose WhatsApp message
+    const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0APhone: ${number}%0AInvestment: ${investment}%0AReferral: ${referral}%0AMessage: ${message}`;
+
+    // WhatsApp API link
+    const whatsappURL = `https://wa.me/971521154446?text=${whatsappMessage}`;
+
+    // Open WhatsApp chat
+    window.open(whatsappURL, "_blank");
+  });
+</script>
 
 
 

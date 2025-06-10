@@ -112,33 +112,171 @@
 </head>
 <body>
   <!-- Header -->
+   <style>
+   /* Menu icon (☰) */
+    .menu-toggle {
+      display: none;
+      font-size: 32px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      height: 100%;
+      background-color: #0d1321;
+      z-index: 1000;
+      transition: right 0.3s ease-in-out;
+      padding: 30px 20px;
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .mobile-menu .close-btn {
+      font-size: 28px;
+      color: white;
+      text-align: right;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-menu ul li {
+      margin-bottom: 20px;
+    }
+
+    .mobile-menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: block;
+    }
+
+    .mobile-submenu {
+      display: none;
+      padding-left: 15px;
+    }
+
+    .mobile-submenu li a {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    /* Responsive behavior */
+    @media (max-width: 768px) {
+      nav.desktop-nav,
+      .actions {
+        display: none !important;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+
+    /* .menu-toggle {
+  display: block !important;
+  background: red;
+} */
+.menu-toggle {
+  display: none;
+}
+
+/* Only show the menu icon on mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+    background: white;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
   <header class="header">
     <div class="logo">
-      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group"  style="width: 250px; height: 120px;"/>
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="Finaxa Investments" style="width: 250px; height: 120px;" />
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav>
-      <ul id="navbar">
-            <li><a href="./index.html" class="active">What We Are</a></li>
-       <!-- <li><a href="./Features.html">Features</a></li> -->
+
+    <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="./index.html" class="active">What We Are</a></li>
+        <li>
+          <a href="./Investment Models.html">
+    Investment Products
+    <span onclick="event.preventDefault(); toggleMobileDropdown()" style="cursor:pointer;"> ▾</span>
+  </a>
+          <div class="dropdown">
+            <a href="./Aviation.html">Aviation Investment</a>
+            <a href="./Real Estate.html">Real Estate Investment</a>
+            <a href="./Commodoties.html">Commodities Investment</a>
+          </div>
+        </li>
+        <li><a href="./insights.html">Insights</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <a href="#" class="button" onclick="openPopup(); return false;">Schedule a Meeting</a>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="close-btn" onclick="toggleMobileMenu()">×</div>
+    <ul>
+      <li><a href="./index.html">What We Are</a></li>
       <li>
-        <a href="./Investment Models.html">Investment Products ▾</a>
-        <div class="dropdown">
-          <a href="./Aviation.html">Aviation Investment</a>
-          <a href="./Real Estate.html">Real Estate Investment</a>
-          <a href="./Commodoties.html">Commodities Investment</a>
-        </div>
+  <a href="./Investment Models.html">
+  Investment Models
+  <span onclick="event.preventDefault(); toggleMobileDropdown()" style="cursor: pointer;"> ▾</span>
+</a>
+        <ul class="mobile-submenu" id="mobileDropdownMenu">
+          <li><a href="./Aviation.html">Aviation Investment</a></li>
+          <li><a href="./Real Estate.html">Real Estate Investment</a></li>
+          <li><a href="./Commodoties.html">Commodities Investment</a></li>
+        </ul>
       </li>
       <li><a href="./insights.html">Insights</a></li>
       <li><a href="./contact.html">Contact Us</a></li>
     </ul>
-    </nav>
-    <div class="actions">
-      <a href="#" class="button" onclick="openPopupCallNow(); return false;">Schedule a Meeting</a>
+  </div>
 
-      <!-- <span class="search">&#128269;</span> -->
-    </div>
-  </header>
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    function toggleMobileDropdown() {
+      const submenu = document.getElementById('mobileDropdownMenu');
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function openPopup() {
+      alert("This would open the Schedule a Meeting popup.");
+    }
+  </script>
+
+
   <style>
     .hero {
       height: 100vh;
@@ -1024,6 +1162,9 @@ nav {
       <span class="close-btn" onclick="closePopup()">&times;</span>
             <h2>Request of call back</h2>
       <form id="callbackForm">
+         <!-- <form id="callbackForm" action="https://api.web3forms.com/submit" method="POST"> -->
+             <!-- <form action="https://api.web3forms.com/submit" method="POST"> -->
+          <!-- <input type="hidden" name="access_key" value="8605b1bd-ef7b-482d-99af-68cc08caa680"> -->
         <input type="text" placeholder="Name*" required>
         <input type="email" placeholder="Email*" required>
         <input type="tel" placeholder="+91 Phone Number*" required>
@@ -1057,6 +1198,7 @@ nav {
     </div>
   </div>
 
+
   <!-- Placeholder content -->
   <!-- <div class="content">
     <h1>Insights</h1>
@@ -1079,8 +1221,48 @@ nav {
     });
   </script>
 
+<script>
+  function openPopupCallNow() {
+    document.getElementById("popupCallNow").style.display = "flex";
+  }
 
+  function closePopupCallNow() {
+    document.getElementById("popupCallNow").style.display = "none";
+  }
 
+  document.getElementById("callbackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("callName").value;
+    const email = document.getElementById("callEmail").value;
+    const phone = document.getElementById("callPhone").value;
+    const investment = document.getElementById("callInvestment").value;
+    const referral = document.getElementById("callReferral").value;
+    const message = document.getElementById("callMessage").value;
+
+    const chk1 = document.getElementById("chk1").checked ? "✔" : "✘";
+    const chk2 = document.getElementById("chk2").checked ? "✔" : "✘";
+    const chk3 = document.getElementById("chk3").checked ? "✔" : "✘";
+
+    const whatsappMessage =
+`📞 Callback Request:
+👤 Name: ${name}
+📧 Email: ${email}
+📱 Phone: ${phone}
+💼 Investment Interest: ${investment}
+📣 Referral Source: ${referral}
+📝 Message: ${message}
+
+✅ Not for project funding: ${chk1}
+✅ Not for job opportunities: ${chk2}
+✅ Investor declaration: ${chk3}`;
+
+    const phoneNumber = "971521154446"; // ← Replace with your WhatsApp number
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappURL, "_blank");
+  });
+</script>
 
 <!-- CALL NOW side button -->
 <div class="call-now-btn" onclick="openPopupCallNow()">Request a Callback</div>
@@ -1091,6 +1273,9 @@ nav {
     <span class="close-btn" onclick="closePopupCallNow()">&times;</span>
           <h2>Request of call back</h2>
     <form id="callbackFormCallNow">
+       <!-- <form id="callbackFormCallNow" action="https://api.web3forms.com/submit" method="POST"> -->
+             <!-- <form action="https://api.web3forms.com/submit" method="POST"> -->
+          <!-- <input type="hidden" name="access_key" value="8605b1bd-ef7b-482d-99af-68cc08caa680"> -->
       <input type="text" placeholder="Name*" required>
       <input type="email" placeholder="Email*" required>
       <input type="tel" placeholder="+91 Phone Number*" required>
@@ -1120,6 +1305,50 @@ nav {
     </form>
   </div>
 </div>
+
+<script>
+  function openPopupCallNow() {
+    document.getElementById("popupCallNow").style.display = "flex";
+  }
+
+  function closePopupCallNow() {
+    document.getElementById("popupCallNow").style.display = "none";
+  }
+
+  document.getElementById("callbackFormCallNow").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("callName").value;
+    const email = document.getElementById("callEmail").value;
+    const phone = document.getElementById("callPhone").value;
+    const investment = document.getElementById("callInvestment").value;
+    const referral = document.getElementById("callReferral").value;
+    const message = document.getElementById("callMessage").value;
+
+    const chk1 = document.getElementById("chk1").checked ? "✔" : "✘";
+    const chk2 = document.getElementById("chk2").checked ? "✔" : "✘";
+    const chk3 = document.getElementById("chk3").checked ? "✔" : "✘";
+
+    const whatsappMessage =
+`📞 Callback Request:
+👤 Name: ${name}
+📧 Email: ${email}
+📱 Phone: ${phone}
+💼 Investment Interest: ${investment}
+📣 Referral Source: ${referral}
+📝 Message: ${message}
+
+✅ Not for project funding: ${chk1}
+✅ Not for job opportunities: ${chk2}
+✅ Investor declaration: ${chk3}`;
+
+    const phoneNumber = "971521154446"; // ← Replace with your WhatsApp number
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappURL, "_blank");
+  });
+</script>
+
 
 <script>
   function openPopupCallNow() {

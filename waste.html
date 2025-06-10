@@ -1,129 +1,231 @@
-<div class="hero-slider">
-  <div class="slide active" style="background-image: url('./img/main.jpg')">
-    <div class="text-overlay">
-      <h2>Smarter Investment</h2>
-      <p>Builds his financial future with Finaxa Investment Group</p>
-      <button>SCHEDULE A MEETING</button>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" style="width: 250px; height: 120px;"/>
     </div>
-  </div>
-  <div class="slide" style="background-image: url('./img/al-jadaf-walk-dubai.jpg')">
-    <div class="text-overlay">
-      <h2>Assured Returns Upto 20%</h2>
-      <p>Invests wisely with Finaxa Investment Group</p>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="navbar">
+            <li><a href="./index.html" class="active">What We Are</a></li>
+       <!-- <li><a href="./Features.html">Features</a></li> -->
+      <li>
+        <a href="./Investment Models.html">Investment Products ▾</a>
+        <div class="dropdown">
+          <a href="./Aviation.html">Aviation Investment</a>
+          <a href="./Real Estate.html">Real Estate Investment</a>
+          <a href="./Commodoties.html">Commodities Investment</a>
+        </div>
+      </li>
+      <li><a href="./insights.html">Insights</a></li>
+      <li><a href="./contact.html">Contact Us</a></li>
+    </ul>
+    </nav>
+    <div class="actions">
+        <a href="#" class="button" onclick="openPopup(); return false;" style="
+      border: 1px solid #b07645;
+      padding: 10px 18px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: 0.3s;
+    ">Schedule a Meeting</a>
+      <!-- <span class="search">&#128269;</span> -->
     </div>
-  </div>
-
-  <div class="progress-line"></div>
-
-  <button class="arrow prev">&#10094;</button>
-  <button class="arrow next">&#10095;</button>
-</div>
+  </header>
+  
 <style>
-.hero-slider {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+   .logo-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease;
+.logo-container img {
+  height: 380px; /* You can adjust this */
+  width: auto;
+  display: block;
 }
 
-.slide.active {
-  opacity: 1;
-  z-index: 1;
+
+
+nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      position: relative;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 8px 10px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #a4713d;
+    }
+
+    /* Dropdown Styles */
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background:#333333;
+      padding: 15px 0;
+      min-width: 200px;
+      border-top: 2px solid #a4713d;
+      z-index: 99;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background: #333;
+    }
+
+    .contact-number {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .phone-icon {
+      margin-right: 5px;
+      color: #a4713d;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: #fff;
+        margin-top: 15px;
+        border-top: 1px solid #ccc;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+
+
+
+    /* Hide menu toggle by default, show on mobile */
+.menu-toggle {
+  display: none;
 }
 
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-  color: white;
-  max-width: 40%;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+@media (max-width: 768px) {
+  nav {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+    color: #333;
+    margin-left: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    padding: 12px 20px;
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+
+  nav ul li .dropdown {
+    position: static;
+    background: #444;
+    border: none;
+  }
+
+  .dropdown a {
+    padding-left: 30px;
+  }
 }
 
-.text-overlay h2 {
-  font-size: 3rem;
-  font-weight: bold;
-}
 
-.text-overlay p {
-  margin: 10px 0;
-}
+  </style>
 
-.text-overlay button {
-  padding: 10px 20px;
-  background-color: #b07240;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.arrow.prev { left: 20px; }
-.arrow.next { right: 20px; }
-
-.progress-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-  background-color: #b07240;
-  width: 0%;
-  animation: progressBar 5s linear infinite;
-}
-
-@keyframes progressBar {
-  from { width: 0%; }
-  to { width: 100%; }
-}
-</style>
-<script>
-const slides = document.querySelectorAll('.slide');
-const progress = document.querySelector('.progress-line');
-let current = 0;
-
-function showSlide(index) {
-  slides[current].classList.remove('active');
-  current = index;
-  slides[current].classList.add('active');
-
-  // Restart progress animation
-  progress.style.animation = 'none';
-  void progress.offsetWidth; // Trigger reflow
-  progress.style.animation = 'progressBar 5s linear infinite';
-}
-
-document.querySelector('.next').onclick = () => {
-  showSlide((current + 1) % slides.length);
-};
-
-document.querySelector('.prev').onclick = () => {
-  showSlide((current - 1 + slides.length) % slides.length);
-};
-
-// Auto slide every 5 seconds
-setInterval(() => {
-  showSlide((current + 1) % slides.length);
-}, 5000);
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navbar');
+    nav.classList.toggle('show');
+  }
 </script>

@@ -110,42 +110,374 @@
     }
   </style>
 </head>
+<style>
+ /* Menu icon (☰) */
+    .menu-toggle {
+      display: none;
+      font-size: 32px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      height: 100%;
+      background-color: #0d1321;
+      z-index: 1000;
+      transition: right 0.3s ease-in-out;
+      padding: 30px 20px;
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .mobile-menu .close-btn {
+      font-size: 28px;
+      color: white;
+      text-align: right;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-menu ul li {
+      margin-bottom: 20px;
+    }
+
+    .mobile-menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: block;
+    }
+
+    .mobile-submenu {
+      display: none;
+      padding-left: 15px;
+    }
+
+    .mobile-submenu li a {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    /* Responsive behavior */
+    @media (max-width: 768px) {
+      nav.desktop-nav,
+      .actions {
+        display: none !important;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+
+    /* .menu-toggle {
+  display: block !important;
+  background: red;
+} */
+.menu-toggle {
+  display: none;
+}
+
+/* Only show the menu icon on mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+    background: white;
+  }
+}
+
+
+  </style>
+</head>
 <body>
-  <!-- Header -->
+
   <header class="header">
     <div class="logo">
-      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="AIX Investment Group" style="width: 250px; height: 120px;"/>
+      <img src="./img/WhatsApp_Image_2025-05-19_at_15.49.53_840affaa-removebg-preview.png" alt="Finaxa Investments" style="width: 250px; height: 120px;" />
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav>
-      <ul id="navbar">
-            <li><a href="./index.html" class="active">What We Are</a></li>
-       <!-- <li><a href="./Features.html">Features</a></li> -->
+
+    <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="./index.html" class="active">What We Are</a></li>
+        <li>
+<a href="./Investment Models.html">
+    Investment Products
+    <span onclick="event.preventDefault(); toggleMobileDropdown()" style="cursor:pointer;"> ▾</span>
+  </a>
+          <div class="dropdown">
+            <a href="./Aviation.html">Aviation Investment</a>
+            <a href="./Real Estate.html">Real Estate Investment</a>
+            <a href="./Commodoties.html">Commodities Investment</a>
+          </div>
+        </li>
+        <li><a href="./insights.html">Insights</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <a href="#" class="button" onclick="openPopup(); return false;">Schedule a Meeting</a>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="close-btn" onclick="toggleMobileMenu()">×</div>
+    <ul>
+      <li><a href="./index.html">What We Are</a></li>
       <li>
-        <a href="./Investment Models.html">Investment Products ▾</a>
-        <div class="dropdown">
-          <a href="./Aviation.html">Aviation Investment</a>
-          <a href="./Real Estate.html">Real Estate Investment</a>
-          <a href="./Commodoties.html">Commodities Investment</a>
-        </div>
+  <a href="./Investment Models.html">
+  Investment Models
+  <span onclick="event.preventDefault(); toggleMobileDropdown()" style="cursor: pointer;"> ▾</span>
+</a>
+        <ul class="mobile-submenu" id="mobileDropdownMenu">
+          <li><a href="./Aviation.html">Aviation Investment</a></li>
+          <li><a href="./Real Estate.html">Real Estate Investment</a></li>
+          <li><a href="./Commodoties.html">Commodities Investment</a></li>
+        </ul>
       </li>
       <li><a href="./insights.html">Insights</a></li>
       <li><a href="./contact.html">Contact Us</a></li>
     </ul>
-    </nav>
-    <div class="actions">
-        <a href="#" class="button" onclick="openPopup(); return false;" style="
-      border: 1px solid #b07645;
-      padding: 10px 18px;
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      border-radius: 4px;
-      transition: 0.3s;
-    ">Schedule a Meeting</a>
-      <!-- <span class="search">&#128269;</span> -->
-    </div>
-  </header>
+  </div>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    function toggleMobileDropdown() {
+      const submenu = document.getElementById('mobileDropdownMenu');
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function openPopup() {
+      alert("This would open the Schedule a Meeting popup.");
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+<style> /* Mobile Toggle */
+    .mobile-menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100%;
+  background-color: #0d1321;
+  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+  padding: 30px 20px;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu .close-btn {
+  font-size: 28px;
+  color: white;
+  text-align: right;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+}
+
+.mobile-submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+.mobile-submenu li a {
+  font-size: 16px;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .desktop-nav,
+  .actions {
+    display: none !important;
+  }
+}
+
+  </style>
+
+<style>
+  /* Base Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Desktop Menu */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.desktop-nav ul li {
+  position: relative;
+}
+
+.desktop-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.desktop-nav .dropdown {
+  display: none;
+  position: absolute;
+  background: #333;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  z-index: 100;
+}
+
+.desktop-nav ul li:hover .dropdown {
+  display: block;
+}
+
+.dropdown a {
+  color: white;
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: #fff;
+  padding: 15px;
+  background: #0d1321;
+  cursor: pointer;
+}
+
+/* Side Sliding Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100%;
+  background: #0d1321;
+  z-index: 1000;
+  padding: 30px 20px;
+  transition: right 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu .close-btn {
+  font-size: 26px;
+  color: white;
+  text-align: right;
+  cursor: pointer;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav,
+  .actions {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+
+</style>
+
+<!-- <script>
+  function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+  }
+</script> -->
+
+
+  
 <style>
    .logo-container {
   margin: 0;
@@ -272,7 +604,241 @@ nav {
     .menu-toggle {
       display: none;
     }
+
+
+
+
+    /* Hide menu toggle by default, show on mobile */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+    color: #333;
+    margin-left: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    padding: 12px 20px;
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+
+  nav ul li .dropdown {
+    position: static;
+    background: #444;
+    border: none;
+  }
+
+  .dropdown a {
+    padding-left: 30px;
+  }
+}
+
+
   </style>
+
+  <!-- <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navbar');
+    nav.classList.toggle('show');
+  }
+</script> -->
+
+
+<!-- Mobile Menu Toggle -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close-btn" onclick="toggleMobileMenu()">×</div>
+  <ul>
+    <li><a href="./index.html">What We Are</a></li>
+    
+    <!-- Investment Models with dropdown -->
+    <li class="mobile-dropdown">
+      <a href="javascript:void(0)" onclick="toggleMobileDropdown()">Investment Models ▾</a>
+      <ul class="mobile-submenu" id="mobileDropdownMenu">
+        <li><a href="./Aviation.html">Aviation Investment</a></li>
+        <li><a href="./Real Estate.html">Real Estate Investment</a></li>
+        <li><a href="./Commodoties.html">Commodities Investment</a></li>
+      </ul>
+    </li>
+
+    <li><a href="./insights.html">Insights</a></li>
+    <li><a href="./contact.html">Contact Us</a></li>
+  </ul>
+</div>
+
+<style>
+
+.mobile-menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100%;
+  background-color: #0d1321;
+  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+  padding: 30px 20px;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu .close-btn {
+  font-size: 28px;
+  color: white;
+  text-align: right;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+}
+
+/* Submenu */
+.mobile-submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+.mobile-submenu li a {
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Show toggle button only on mobile */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  nav, .desktop-menu, .actions {
+    display: none !important;
+  }
+}
+
+/* Side Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100%;
+  background-color: #0d1321; /* dark blue like AIX */
+  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+  padding: 30px 20px;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu .close-btn {
+  font-size: 28px;
+  color: white;
+  text-align: right;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+}
+
+/* Show menu toggle on mobile only */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  nav, .desktop-menu, .actions {
+    display: none;
+  }
+}
+
+</style>
+
+<script>
+ function toggleMobileDropdown() {
+  const submenu = document.getElementById('mobileDropdownMenu'); // ✅ Fix this line
+  if (submenu.style.display === 'block') {
+    submenu.style.display = 'none';
+  } else {
+    submenu.style.display = 'block';
+  }
+}
+
+</script>
+
+
+
 
 <main>
   <!-- <section class="hero" id="hero"> -->
@@ -1021,7 +1587,9 @@ function showSlide(index) {
 
   <section id="contact" class="contact" aria-label="Contact Section">
     <h2>Contact Us</h2>
-    <form class="contact-form" aria-label="Contact form">
+    <!-- <form class="contact-form" aria-label="Contact form"> -->
+      <form id="contactForm">
+
       <label for="name">Name</label>
       <input id="name" name="name" type="text" placeholder="Your full name" required minlength="2" />
       <label for="email">Email</label>
@@ -1061,6 +1629,53 @@ function showSlide(index) {
       <button type="submit" aria-label="Submit Contact Form">Send Message</button>
     </form>
   </section>
+  <script>
+  function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  document.getElementById("callbackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Capture form fields
+    const inputs = document.querySelectorAll("#callbackForm input, #callbackForm select, #callbackForm textarea");
+    const name = inputs[0].value;
+    const email = inputs[1].value;
+    const phone = inputs[2].value;
+    const investment = inputs[3].value;
+    const source = inputs[4].value;
+    const message = inputs[5].value;
+
+    // const checkbox1 = inputs[6].checked ? "✔" : "✘";
+    // const checkbox2 = inputs[7].checked ? "✔" : "✘";
+    // const checkbox3 = inputs[8].checked ? "✔" : "✘";
+
+    // WhatsApp message content
+    const whatsappMessage = 
+`Request a Callback:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Looking to Invest in: ${investment}
+Heard About Us From: ${source}
+Message: ${message}
+
+✔ Inquiry is not for project funding: ${checkbox1}
+✔ Inquiry is not for job opportunities: ${checkbox2}
+✔ Confirmed as a professional/accredited investor: ${checkbox3}`;
+
+    // Encode and send to WhatsApp (change to your number)
+    const phoneNumber = "91XXXXXXXXXX"; // <-- Replace with your number without + (e.g., 919876543210)
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, "_blank");
+  });
+</script>
+
+
   <style>
     .contact-form {
   max-width: 400px;
@@ -1334,6 +1949,51 @@ function showSlide(index) {
       </form>
     </div>
   </div>
+   <script>
+  function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  document.getElementById("callbackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Capture form fields
+    const inputs = document.querySelectorAll("#callbackForm input, #callbackForm select, #callbackForm textarea");
+    const name = inputs[0].value;
+    const email = inputs[1].value;
+    const phone = inputs[2].value;
+    const investment = inputs[3].value;
+    const source = inputs[4].value;
+    const message = inputs[5].value;
+
+    const checkbox1 = inputs[6].checked ? "✔" : "✘";
+    const checkbox2 = inputs[7].checked ? "✔" : "✘";
+    const checkbox3 = inputs[8].checked ? "✔" : "✘";
+
+    // WhatsApp message content
+    const whatsappMessage = 
+`Request a Callback:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Looking to Invest in: ${investment}
+Heard About Us From: ${source}
+Message: ${message}
+
+✔ Inquiry is not for project funding: ${checkbox1}
+✔ Inquiry is not for job opportunities: ${checkbox2}
+✔ Confirmed as a professional/accredited investor: ${checkbox3}`;
+
+    // Encode and send to WhatsApp (change to your number)
+    const phoneNumber = "971521154446"; // <-- Replace with your number without + (e.g., 919876543210)
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, "_blank");
+  });
+</script>
 
   <!-- Placeholder content -->
   <!-- <div class="content">
